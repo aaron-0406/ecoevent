@@ -8,10 +8,18 @@ import { MatSliderModule } from '@angular/material/slider';
 import { EventoComponent } from './Components/evento/evento.component';
 import {MatTableModule} from '@angular/material/table';
 import {MatIconModule} from '@angular/material/icon';
+import { NavbarComponent } from './Components/layouts/navbar/navbar.component';
+import { LayoutComponent } from './Components/layouts/layout/layout.component';
+import { FooterComponent } from './Components/layouts/footer/footer.component';
+import { CrearEventoComponent } from './administrador/pages/crear-evento/crear-evento.component';
 @NgModule({
   declarations: [
     AppComponent,
-    EventoComponent
+    EventoComponent,
+    NavbarComponent,
+    LayoutComponent,
+    FooterComponent,
+    CrearEventoComponent
   ],
   imports: [
     BrowserModule,
