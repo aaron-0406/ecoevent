@@ -5,24 +5,24 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
-import { ListaComponent } from './Components/lista/lista.component';
-import {MatTableModule} from '@angular/material/table'; 
-import {MatIconModule} from '@angular/material/icon'; 
+import { EventoComponent } from './Components/evento/evento.component';
+import {MatTableModule} from '@angular/material/table';
+import {MatIconModule} from '@angular/material/icon';
 @NgModule({
   declarations: [
     AppComponent,
-    ListaComponent
+    EventoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatSliderModule, 
+    MatSliderModule,
     MatTableModule,
     MatIconModule
   ],
   exports:[
-    MatTableModule, 
+    MatTableModule,
     MatIconModule
   ],
   providers: [],
