@@ -11,7 +11,6 @@ import {MatIconModule} from '@angular/material/icon';
 import { NavbarComponent } from './Components/layouts/navbar/navbar.component';
 import { LayoutComponent } from './Components/layouts/layout/layout.component';
 import { FooterComponent } from './Components/layouts/footer/footer.component';
-import { CrearEventoComponent } from './administrador/pages/crear-evento/crear-evento.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +18,6 @@ import { CrearEventoComponent } from './administrador/pages/crear-evento/crear-e
     NavbarComponent,
     LayoutComponent,
     FooterComponent,
-    CrearEventoComponent
   ],
   imports: [
     BrowserModule,
