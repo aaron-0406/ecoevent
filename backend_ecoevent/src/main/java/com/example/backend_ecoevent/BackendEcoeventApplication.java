@@ -1,4 +1,4 @@
-package com.jtl.backend_ecoevent;
+package com.example.backend_ecoevent;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
