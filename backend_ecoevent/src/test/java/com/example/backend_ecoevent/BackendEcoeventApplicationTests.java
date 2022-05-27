@@ -1,4 +1,4 @@
-package com.jtl.backend_ecoevent;
+package com.example.backend_ecoevent;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
