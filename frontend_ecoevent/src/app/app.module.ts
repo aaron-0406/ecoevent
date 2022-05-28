@@ -16,6 +16,7 @@ import { NavbarComponent } from './Components/layouts/navbar/navbar.component';
 import { LayoutComponent } from './Components/layouts/layout/layout.component';
 import { FooterComponent } from './Components/layouts/footer/footer.component';
 import { CrearEventoComponent } from './Components/evento/crear-evento.component';
+import { EventoService } from './services/evento.service';
 
 const routes:Routes=[
   { path: '', redirectTo: '/eventos', pathMatch: 'full'},
@@ -48,7 +49,7 @@ const routes:Routes=[
     MatTableModule,
     MatIconModule
   ],
-  providers: [],
+  providers: [EventoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

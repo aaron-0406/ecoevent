@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <body>
+    <form [formGroup]="formGroup" (ngSubmit)="crearEvento()">
   <div class="container">
     <div class="title">Creación de Eventos</div>
     <form action="#">
@@ -11,7 +12,7 @@
             placeholder="Ingresar título de evento"
             name="titulo"
             [(ngModel)]="eventoMostrar.titulo"
-            required
+            required formControlName="titulo"
           />
         </div>
         <div class="input-box">
@@ -21,7 +22,7 @@
             placeholder="Ingresar descripción del evento"
             name="descripcion"
             [(ngModel)]="eventoMostrar.descripcion"
-            required
+            required formControlName="descripcion"
           />
         </div>
         <div class="input-box">
@@ -29,9 +30,9 @@
           <input
             type="text"
             placeholder="Ingresar el lugar del evento"
-            required
             name="lugar"
             [(ngModel)]="eventoMostrar.lugar"
+            required formControlName="lugar"
           />
         </div>
         <div class="coc-form">
