@@ -38,7 +38,6 @@ export class CrearEventoComponent implements OnInit {
     : this.eventoCreado;
 
   crearEvento() {
-    console.log({ dd: this.eventoMostrar });
     if (this.eventoCreado.titulo) {
       this._eventoService.crearEvento({
         ...this.eventoMostrar,
