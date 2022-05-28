@@ -1,65 +1,65 @@
 <!DOCTYPE html>
 <body>
-    <form [formGroup]="formGroup" (ngSubmit)="crearEvento()">
   <div class="container">
     <div class="title">Creación de Eventos</div>
-    <form action="#">
-      <div class="events">
-        <div class="input-box">
-          <span class="details">Título</span>
-          <input
-            type="text"
-            placeholder="Ingresar título de evento"
-            name="titulo"
-            [(ngModel)]="eventoMostrar.titulo"
-            required formControlName="titulo"
-          />
-        </div>
-        <div class="input-box">
-          <span class="details">Descripción</span>
-          <input
-            type="text"
-            placeholder="Ingresar descripción del evento"
-            name="descripcion"
-            [(ngModel)]="eventoMostrar.descripcion"
-            required formControlName="descripcion"
-          />
-        </div>
-        <div class="input-box">
-          <span class="details">Lugar</span>
-          <input
-            type="text"
-            placeholder="Ingresar el lugar del evento"
-            name="lugar"
-            [(ngModel)]="eventoMostrar.lugar"
-            required formControlName="lugar"
-          />
-        </div>
-        <div class="coc-form">
-          <div class="coc-block-row">
-            <label class="coc-block-label" for="dateofevent"
-              >Dia del evento</label
-            >
-            <div class="coc-block">
-              <input
-                class="coc-input"
-                type="date"
-                id="dateofevent"
-                name="fecha"
-                [(ngModel)]="eventoMostrar.fecha"
-              />
-            </div>
+    <div class="events">
+      <div class="input-box">
+        <span class="details">Título</span>
+        <input
+          type="text"
+          placeholder="Ingresar título de evento"
+          name="titulo"
+          required
+          [(ngModel)]="eventoMostrar.titulo"
+        />
+      </div>
+      <div class="input-box">
+        <span class="details">Descripción</span>
+        <input
+          type="text"
+          placeholder="Ingresar descripción del evento"
+          name="descripcion"
+          [(ngModel)]="eventoMostrar.descripcion"
+          required
+        />
+      </div>
+      <div class="input-box">
+        <span class="details">Lugar</span>
+        <input
+          type="text"
+          placeholder="Ingresar el lugar del evento"
+          name="lugar"
+          required
+          [(ngModel)]="eventoMostrar.lugar"
+        />
+      </div>
+      <div class="coc-form">
+        <div class="coc-block-row">
+          <label class="coc-block-label" for="dateofevent"
+            >Dia del evento</label
+          >
+          <div class="coc-block">
+            <input
+              class="coc-input"
+              type="date"
+              id="dateofevent"
+              name="fecha"
+              [(ngModel)]="eventoMostrar.fecha"
+            />
           </div>
         </div>
-        <button class="button-88" role="button">Subir foto</button>
-        <br />
-        <div class="button" [routerLink]="['/eventos']">
-          <input type="submit" value="CANCELAR" />
-        </div>
-        <div class="button">
-          <button (click)="editarEvento()">Guardar cambios</button>
-        </div>
       </div>
-    </form>
+      <button class="button-88" role="button">Subir foto</button>
+      <br />
+      <div class="button" [routerLink]="['/eventos']">
+        <input type="submit" value="CANCELAR" />
+      </div>
+      <div class="button">
+        <button *ngIf="accion" (click)="crearEvento()">Crear evento</button>
+        <button *ngIf="accion === false" (click)="editarEvento()">
+          Guardar evento
+        </button>
+      </div>
+    </div>
   </div>
 </body>

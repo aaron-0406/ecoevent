@@ -104,6 +104,10 @@ export class EventoService {
     return this.listEventos.slice();
   }
 
+  crearEvento(eventNew: Eventos) {
+    this.listEventos.push(eventNew);
+  }
+
   editarEvento(eventoEditar: Eventos) {
     const listaEventosModificados = this.listEventos.map((evento: Eventos) => {
       if (evento.id === eventoEditar.id) {

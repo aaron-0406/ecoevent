@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import {Routes, RouterModule} from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 
 import { FormsModule } from '@angular/forms'; //Trabajar con formularios
 
@@ -10,19 +10,19 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
 import { EventoComponent } from './Components/evento/evento.component';
-import {MatTableModule} from '@angular/material/table';
-import {MatIconModule} from '@angular/material/icon';
+import { MatTableModule } from '@angular/material/table';
+import { MatIconModule } from '@angular/material/icon';
 import { NavbarComponent } from './Components/layouts/navbar/navbar.component';
 import { LayoutComponent } from './Components/layouts/layout/layout.component';
 import { FooterComponent } from './Components/layouts/footer/footer.component';
 import { CrearEventoComponent } from './Components/evento/crear-evento.component';
 import { EventoService } from './services/evento.service';
 
-const routes:Routes=[
-  { path: '', redirectTo: '/eventos', pathMatch: 'full'},
-  { path: 'eventos', component: EventoComponent},
-  { path: 'eventos/nuevo', component: CrearEventoComponent},
-  { path: 'eventos/nuevo/:id', component: CrearEventoComponent},
+const routes: Routes = [
+  { path: '', redirectTo: '/eventos', pathMatch: 'full' },
+  { path: 'eventos', component: EventoComponent },
+  { path: 'eventos/create', component: CrearEventoComponent },
+  { path: 'eventos/nuevo/:id', component: CrearEventoComponent },
 ];
 
 @NgModule({
@@ -32,7 +32,7 @@ const routes:Routes=[
     NavbarComponent,
     LayoutComponent,
     FooterComponent,
-    CrearEventoComponent
+    CrearEventoComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,16 +40,12 @@ const routes:Routes=[
     BrowserAnimationsModule,
     MatSliderModule,
     MatTableModule,
-    MatIconModule, 
+    MatIconModule,
     FormsModule,
-    RouterModule.forRoot(routes)
-
+    RouterModule.forRoot(routes),
   ],
-  exports:[
-    MatTableModule,
-    MatIconModule
-  ],
+  exports: [MatTableModule, MatIconModule],
   providers: [EventoService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -10,42 +10,44 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./crear-evento.component.css'],
 })
 export class CrearEventoComponent implements OnInit {
-
-  form: FormGroup;
   constructor(
     private _eventoService: EventoService,
     private rutaEvento: ActivatedRoute,
-    private router: Router,
-    private event: FormBuilder,
-  ) {
-    this.form = this.event.group({
-      titulo: ['', Validators.required],
-      descripcion: ['', Validators.required],
-      lugar: ['', Validators.required],
-  })
-  }
+    private router: Router
+  ) {}
   index: number = this.rutaEvento.snapshot.params['id'];
-
-  eventoMostrar: Eventos = this._eventoService.listEventos[this.index - 1];
 
   ngOnInit(): void {}
 
-  crearEvento(){
-    console.log(this.form);
+  eventoCreado: Eventos = {
+    id: '',
+    titulo: '',
+    descripcion: '',
+    lugar: '',
+    fecha: '',
+    hora: '',
+    foto: '',
+  };
 
-    const event: Eventos = {
-      titulo: this.form.value.titulo,
-      descripcion: this.form.value.descripcion,
-      lugar: this.form.value.lugar,
-      fecha: this.eventoMostrar.fecha,
-      hora: this.eventoMostrar.hora,
-      id: this.eventoMostrar.id,
-      foto: ''
+  accion: boolean = this._eventoService.listEventos[this.index - 1]
+    ? false
+    : true;
+
+  eventoMostrar: Eventos = this._eventoService.listEventos[this.index - 1]
+    ? this._eventoService.listEventos[this.index - 1]
+    : this.eventoCreado;
+
+  crearEvento() {
+    console.log({ dd: this.eventoMostrar });
+    if (this.eventoCreado.titulo) {
+      this._eventoService.crearEvento({
+        ...this.eventoMostrar,
+        id: String(this._eventoService.listEventos.length + 1),
+      });
+      this.router.navigate(['/eventos']);
     }
-    console.log(event);
-
-    this._eventoService.crearEvento(event);
   }
+
   editarEvento() {
     this._eventoService.editarEvento(this.eventoMostrar);
     this.router.navigate(['/eventos']);
