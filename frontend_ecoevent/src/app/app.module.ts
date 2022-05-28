@@ -1,6 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import {Routes, RouterModule} from '@angular/router';
+
+import { FormsModule } from '@angular/forms'; //Trabajar con formularios
+
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -11,6 +15,14 @@ import {MatIconModule} from '@angular/material/icon';
 import { NavbarComponent } from './Components/layouts/navbar/navbar.component';
 import { LayoutComponent } from './Components/layouts/layout/layout.component';
 import { FooterComponent } from './Components/layouts/footer/footer.component';
+import { CrearEventoComponent } from './Components/evento/crear-evento.component';
+
+const routes:Routes=[
+  { path: '', redirectTo: '/eventos', pathMatch: 'full'},
+  { path: 'eventos', component: EventoComponent},
+  { path: 'eventos/nuevo', component: CrearEventoComponent},
+];
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,6 +30,7 @@ import { FooterComponent } from './Components/layouts/footer/footer.component';
     NavbarComponent,
     LayoutComponent,
     FooterComponent,
+    CrearEventoComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +38,10 @@ import { FooterComponent } from './Components/layouts/footer/footer.component';
     BrowserAnimationsModule,
     MatSliderModule,
     MatTableModule,
-    MatIconModule
+    MatIconModule, 
+    FormsModule,
+    RouterModule.forRoot(routes)
+
   ],
   exports:[
     MatTableModule,

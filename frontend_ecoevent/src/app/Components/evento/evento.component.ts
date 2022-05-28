@@ -16,7 +16,10 @@ export interface Eventos {
   templateUrl: './evento.component.html',
   styleUrls: ['./evento.component.css'],
 })
+
 export class EventoComponent implements OnInit {
+  
+
   listEventos: Eventos[] = [];
 
   displayedColumns: string[] = [
@@ -31,7 +34,8 @@ export class EventoComponent implements OnInit {
   ];
   dataSource!: MatTableDataSource<any>;
 
-  constructor(private _eventoService: EventoService) {}
+  constructor(private _eventoService: EventoService) {
+  }
 
   ngOnInit(): void {
     this.cargarEventos();
