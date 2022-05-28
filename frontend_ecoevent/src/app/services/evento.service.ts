@@ -26,6 +26,18 @@ export class EventoService {
     return this.listEventos.slice();
   }
 
+  editarEvento(id: string, eventoEditar: Eventos){
+    const listaEventosModificados = this.listEventos.map((evento: Eventos) => {
+      if (evento.id === id){
+        return eventoEditar;
+      }
+
+      return evento;
+    })
+
+    this.listEventos = listaEventosModificados;
+  }
+
   eliminarEvento(index:number){
     this.listEventos.splice(index,1);
   }

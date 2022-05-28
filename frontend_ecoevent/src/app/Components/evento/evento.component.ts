@@ -46,6 +46,11 @@ export class EventoComponent implements OnInit {
     this.dataSource = new MatTableDataSource(this.listEventos);
   }
 
+  editarEvento(id:string, eventoEditar: Eventos){
+    console.log(id);
+    this._eventoService.editarEvento(id, eventoEditar);
+  }
+
   eliminarEvento(index: number) {
     console.log(index);
     this._eventoService.eliminarEvento(index);

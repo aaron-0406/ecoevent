@@ -21,6 +21,7 @@ const routes:Routes=[
   { path: '', redirectTo: '/eventos', pathMatch: 'full'},
   { path: 'eventos', component: EventoComponent},
   { path: 'eventos/nuevo', component: CrearEventoComponent},
+  { path: 'eventos/nuevo/:id', component: CrearEventoComponent},
 ];
 
 @NgModule({
