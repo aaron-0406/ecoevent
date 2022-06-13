@@ -17,12 +17,16 @@ import { LayoutComponent } from './Components/layouts/layout/layout.component';
 import { FooterComponent } from './Components/layouts/footer/footer.component';
 import { CrearEventoComponent } from './Components/evento/crear-evento.component';
 import { EventoService } from './services/evento.service';
+import { NewsListComponentComponent } from './Components/News/news-list-component/news-list-component.component';
+
 
 const routes: Routes = [
   { path: '', redirectTo: '/eventos', pathMatch: 'full' },
   { path: 'eventos', component: EventoComponent },
   { path: 'eventos/create', component: CrearEventoComponent },
   { path: 'eventos/nuevo/:id', component: CrearEventoComponent },
+  // News
+  { path:'newslist',component:NewsListComponentComponent}
 ];
 
 @NgModule({
@@ -33,6 +37,7 @@ const routes: Routes = [
     LayoutComponent,
     FooterComponent,
     CrearEventoComponent,
+    NewsListComponentComponent,
   ],
   imports: [
     BrowserModule,
