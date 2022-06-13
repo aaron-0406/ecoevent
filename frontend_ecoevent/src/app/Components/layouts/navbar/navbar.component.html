@@ -5,16 +5,26 @@
           <img id="logo" src="assets/imagen/logo.jpeg" alt="" weight=80 height=80>
           </a>
       </div>
-      <ul class="navbar-list">
-        <li><a routerLink="/home">Inicio</a></li>
-        <li><a href="">Eventos</a></li>
-        <li><a href="">Noticias</a></li>
-        <li><a href="">Puntos de Acopio</a></li>
-        <li><a href="">Horarios</a></li>
-      </ul>
+<!--
+  
+  <ul class="navbar-list">
+         <li><a routerLink="/home">Inicio</a></li>
+         <li><a href="">Eventos</a></li>
+         <li><a href="">Noticias</a></li>
+         <li><a href="">Puntos de Acopio</a></li>
+         <li><a href="">Horarios</a></li>
+       </ul>
+-->
 
-      <div class="navbar-button">
-        <a>IS</a>
+      <div id="navbar">
+        <button mat-button routerLink="/home">Inicio</button>
+        <button mat-button>Eventos</button>
+        <button mat-button>Noticias</button>
+        <button mat-button>Puntos de acopio</button>
+        <button mat-button>Horarios</button>
+        <button mat-raised-button color="primary">Is</button>    
       </div>
+
+
     </div>
   </div>

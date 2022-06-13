@@ -18,6 +18,7 @@ import { FooterComponent } from './Components/layouts/footer/footer.component';
 import { CrearEventoComponent } from './Components/evento/crear-evento.component';
 import { EventoService } from './services/evento.service';
 import { NewsListComponentComponent } from './Components/News/news-list-component/news-list-component.component';
+import {MatButtonModule} from '@angular/material/button'; 
 
 
 const routes: Routes = [
@@ -48,6 +49,7 @@ const routes: Routes = [
     MatIconModule,
     FormsModule,
     RouterModule.forRoot(routes),
+    MatButtonModule
   ],
   exports: [MatTableModule, MatIconModule],
   providers: [EventoService],

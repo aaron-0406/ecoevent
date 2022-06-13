@@ -85,3 +85,11 @@
   
   @media (min-width: 769px) {
   }
+  
+  /*
+  nav 2
+  */
+
+  #navbar{
+    margin: 20px;
+  }
