@@ -18,7 +18,9 @@ import { FooterComponent } from './Components/layouts/footer/footer.component';
 import { CrearEventoComponent } from './Components/evento/crear-evento.component';
 import { EventoService } from './services/evento.service';
 import { NewsListComponentComponent } from './Components/News/news-list-component/news-list-component.component';
-import {MatButtonModule} from '@angular/material/button'; 
+import {MatButtonModule} from '@angular/material/button';
+import { NewsEditComponentComponent } from './Components/News/news-edit-component/news-edit-component.component';
+import { NewsCreateEditComponentComponent } from './Components/News/news-create-edit-component/news-create-edit-component.component'; 
 
 
 const routes: Routes = [
@@ -27,7 +29,9 @@ const routes: Routes = [
   { path: 'eventos/create', component: CrearEventoComponent },
   { path: 'eventos/nuevo/:id', component: CrearEventoComponent },
   // News
-  { path:'newslist',component:NewsListComponentComponent}
+  { path:'newslist',component: NewsListComponentComponent},
+  { path:'nuevaNoticia',component: NewsCreateEditComponentComponent},
+  { path:'editar/:id',component: NewsCreateEditComponentComponent}
 ];
 
 @NgModule({
@@ -39,6 +43,8 @@ const routes: Routes = [
     FooterComponent,
     CrearEventoComponent,
     NewsListComponentComponent,
+    NewsEditComponentComponent,
+    NewsCreateEditComponentComponent,
   ],
   imports: [
     BrowserModule,

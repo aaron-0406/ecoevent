@@ -2,6 +2,7 @@ table {
     width: 100%;
   }
   .button-row button,
+  
 .button-row a {
   background-color: #36b343;
   border-radius: 8px;
@@ -32,3 +33,4 @@ table {
 .button-row:focus {
   background-color: #ffffff;
 }
+

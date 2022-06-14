@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
+
 export interface News {
   id: string;
   title: string;
@@ -11,6 +12,7 @@ export interface News {
   templateUrl: './news-list-component.component.html',
   styleUrls: ['./news-list-component.component.css']
 })
+
 export class NewsListComponentComponent {
   listNews: News[] = [
     {id:'1',title:"Noticia1",description:"da"},
@@ -22,6 +24,7 @@ export class NewsListComponentComponent {
     'id',
     'title',
     'description',
+    'botones'
   ];
   dataSource!: MatTableDataSource<any>;
 
