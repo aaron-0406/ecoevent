@@ -1,65 +1,54 @@
-<!DOCTYPE html>
-<body>
-  <div class="container">
-    <div class="title">Creación de Eventos</div>
-    <div class="events">
-      <div class="input-box">
-        <span class="details">Título</span>
-        <input
-          type="text"
-          placeholder="Ingresar título de evento"
-          name="titulo"
-          required
-          [(ngModel)]="eventoMostrar.titulo"
-        />
-      </div>
-      <div class="input-box">
-        <span class="details">Descripción</span>
-        <input
-          type="text"
-          placeholder="Ingresar descripción del evento"
-          name="descripcion"
-          [(ngModel)]="eventoMostrar.descripcion"
-          required
-        />
-      </div>
-      <div class="input-box">
-        <span class="details">Lugar</span>
-        <input
-          type="text"
-          placeholder="Ingresar el lugar del evento"
-          name="lugar"
-          required
-          [(ngModel)]="eventoMostrar.lugar"
-        />
-      </div>
-      <div class="coc-form">
-        <div class="coc-block-row">
-          <label class="coc-block-label" for="dateofevent"
-            >Dia del evento</label
-          >
-          <div class="coc-block">
-            <input
-              class="coc-input"
-              type="date"
-              id="dateofevent"
-              name="fecha"
-              [(ngModel)]="eventoMostrar.fecha"
-            />
-          </div>
-        </div>
-      </div>
-      <button class="button-88" role="button">Subir foto</button>
-      <br />
-      <div class="button" [routerLink]="['/eventos']">
-        <input type="submit" value="CANCELAR" />
-      </div>
-      <div class="button">
-        <button *ngIf="accion" (click)="crearEvento()">Crear evento</button>
-        <button *ngIf="accion === false" (click)="editarEvento()">
-          Guardar evento
-        </button>
-      </div>
+<H1>Creación de Eventos</H1>
+
+<form class="row g-3">
+  <div class="col-md-12">
+    <label for="input" class="form-label">Título</label>
+    <input type="text" class="form-control" name="titulo" required
+    [(ngModel)]="eventoMostrar.titulo">
+  </div>
+
+  <div class="col-md-12">
+    <label for="input" class="form-label">Descripción</label>
+    <input type="text" class="form-control" name="descripcion" 
+    [(ngModel)]="eventoMostrar.descripcion"
+    required>
+  </div>
+
+  <div class="col-md-6">
+    <label for="inputAddress2" class="form-label">Lugar</label>
+    <input type="text" class="form-control" name="lugar" required
+    [(ngModel)]="eventoMostrar.lugar">
+  </div>
+
+  <div class="col-md-4">
+    <label for="dateofevent" class="form-label">Dia del Evento</label>
+    <div class="form-label">
+      <input
+        class="form-control"
+        type="date"
+        id="dateofevent"
+        name="fecha"
+        [(ngModel)]="eventoMostrar.fecha"
+      />
     </div>
   </div>
-</body>
+
+  <div class="col-md-2">
+    <label for="inputAddress2" class="form-label">Hora del evento</label>
+    <input type="time" class="form-control" ide="hora" name="hora" required
+    [(ngModel)]="eventoMostrar.hora">
+  </div>
+  
+  <div class="col-12">
+    <label for="" class="form-label">Subir foto</label>
+    <input type="file" class="form-control" id="inputGroupFile02">
+  </div>
+
+  <div class="col-md-4">
+    <button [routerLink]="['/eventos']" class="btn btn-secondary" type="submit">Cancelar</button>
+      <button *ngIf="accion" (click)="crearEvento()" class="btn btn-aceptar float-end" type="submit">Crear</button>
+      <button *ngIf="accion === false" (click)="editarEvento()" class="btn btn-aceptar float-end" type="submit">
+        Guardar cambios </button>
+  </div>
+</form>
+
