@@ -14,19 +14,26 @@ export class NewsService {
     {id:'3',titulo:"Noticia3",descripcion:"da"}
   ];
 
-
   constructor() { }
 
   getNews(){
     return this.listNews.slice();
   }
 
-  crearNoticia(news: News){
-    this.listNews.push(news);
+  crearNoticia(noticiaNueva: News){
+    this.listNews.push(noticiaNueva);
   }
 
-  editarNoticia(news: News){
-    
+  editarNoticia(noticiaEditar: News){
+    const listaNoticiasModificadas = this.listNews.map((news: News) => {
+      if (news.id === noticiaEditar.id) {
+        return noticiaEditar;
+      }
+
+      return news;
+    });
+
+    this.listNews = listaNoticiasModificadas;
   }
 
 

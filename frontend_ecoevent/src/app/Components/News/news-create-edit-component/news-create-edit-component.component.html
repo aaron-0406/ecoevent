@@ -1,17 +1,21 @@
-<h1> Agregar Noticia</h1>
+<h1> {{acto}} Noticia</h1>
 
 <form>
     <div class="mb-3">
         <label for="titulo" class="form-label">Título</label>
-        <input type="text" class="form-control" id="titulo">
+        <input type="text" class="form-control" name="titulo" required
+        [(ngModel)]="newMostrar.titulo">
       </div>
 
       <div class="mb-3">
         <label for="descripcion" class="form-label">Descripción</label>
-        <textarea class="form-control" id="descripcion" rows="3"></textarea>
+        <textarea class="form-control" name="descripcion" rows="3" required
+        [(ngModel)]="newMostrar.descripcion"></textarea>
       </div>
 
       
       <button [routerLink]="['/newslist']" class="btn btn-secondary" type="submit">Volver</button>
       <button *ngIf="accion" (click)="crearNoticia()" class="btn btn-aceptar float-end" type="submit">Aceptar</button>
+      <button *ngIf="accion === false" (click)="editarNoticia()" class="btn btn-aceptar float-end" type="submit">
+        Guardar cambios </button>
 </form>

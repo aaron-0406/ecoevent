@@ -3,8 +3,8 @@ import { MatTableDataSource } from '@angular/material/table';
 import { NewsService } from 'src/app/services/news.service';
 export interface News {
   id: string;
-  title: string;
-  description: string;
+  titulo: string;
+  descripcion: string;
 }
 
 @Component({
@@ -14,20 +14,17 @@ export interface News {
 })
 
 export class NewsListComponentComponent {
-  listNews: News[] = [ 
-    {id:'1',title:"Noticia1",description:"da"},
-    {id:'2',title:"Noticia2",description:"da"},
-    {id:'3',title:"Noticia3",description:"da"}
-  ];
+  listNews: News[] = [];
 
   displayedColumns: string[] = [
     'id',
-    'title',
+    'titulo',
     'description',
     'botones',
   ];
   dataSource!: MatTableDataSource<any>;
 
+  constructor(private _newsService: NewsService){}
 
   ngOnInit(): void {
     this.cargarNoticias();
@@ -37,6 +34,7 @@ export class NewsListComponentComponent {
   }
 
   cargarNoticias(){
+    this.listNews = this._newsService.getNews();
     this.dataSource = new MatTableDataSource(this.listNews);
   } 
 }

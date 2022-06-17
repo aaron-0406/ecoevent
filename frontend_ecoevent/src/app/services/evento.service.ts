@@ -10,7 +10,7 @@ export class EventoService {
       id: '1',
       titulo: 'Recojo de basura en las playas',
       descripcion: '',
-      lugar: 'Trujillo',
+      lugar: 'Piura',
       hora: '21',
       fecha: '01/02/2001',
       foto: 'url',
