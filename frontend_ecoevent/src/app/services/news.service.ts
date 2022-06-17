@@ -8,10 +8,10 @@ import { News } from '../Components/News/Model/News';
 
 
 export class NewsService {
-  listNews: News[] = [
-    {id:'1',name:"Noticia1",description:"da"},
-    {id:'2',name:"Noticia2",description:"da"},
-    {id:'3',name:"Noticia3",description:"da"}
+  listNews: News[] = [ 
+    {id:'1',titulo:"Noticia1",descripcion:"da"},
+    {id:'2',titulo:"Noticia2",descripcion:"da"},
+    {id:'3',titulo:"Noticia3",descripcion:"da"}
   ];
 
 
@@ -20,4 +20,14 @@ export class NewsService {
   getNews(){
     return this.listNews.slice();
   }
+
+  crearNoticia(news: News){
+    this.listNews.push(news);
+  }
+
+  editarNoticia(news: News){
+    
+  }
+
+
 }

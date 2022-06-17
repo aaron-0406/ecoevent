@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
-
+import { NewsService } from 'src/app/services/news.service';
 export interface News {
   id: string;
   title: string;
@@ -14,7 +14,7 @@ export interface News {
 })
 
 export class NewsListComponentComponent {
-  listNews: News[] = [
+  listNews: News[] = [ 
     {id:'1',title:"Noticia1",description:"da"},
     {id:'2',title:"Noticia2",description:"da"},
     {id:'3',title:"Noticia3",description:"da"}
@@ -24,7 +24,7 @@ export class NewsListComponentComponent {
     'id',
     'title',
     'description',
-    'botones'
+    'botones',
   ];
   dataSource!: MatTableDataSource<any>;
 
@@ -32,6 +32,10 @@ export class NewsListComponentComponent {
   ngOnInit(): void {
     this.cargarNoticias();
   }
+  crearNoticia(news: News){
+    this.listNews.push(news);
+  }
+
   cargarNoticias(){
     this.dataSource = new MatTableDataSource(this.listNews);
   } 

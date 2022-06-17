@@ -1,5 +1,5 @@
 export class News {
   id: string = ""; 
-  name: string = "";
-  description: string = "";
+  titulo: string = "";
+  descripcion: string = "";
 }

@@ -11,6 +11,7 @@
         <textarea class="form-control" id="descripcion" rows="3"></textarea>
       </div>
 
-      <button class="btn btn-aceptar float-end" type="submit">Aceptar</button>
+      
       <button [routerLink]="['/newslist']" class="btn btn-secondary" type="submit">Volver</button>
+      <button *ngIf="accion" (click)="crearNoticia()" class="btn btn-aceptar float-end" type="submit">Aceptar</button>
 </form>
