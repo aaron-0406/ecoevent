@@ -1,4 +1,4 @@
-package com.example.backend_ecoevent.models;
+package com.example.backend_ecoevent.domain.entities;
 
 import java.util.Date;
 

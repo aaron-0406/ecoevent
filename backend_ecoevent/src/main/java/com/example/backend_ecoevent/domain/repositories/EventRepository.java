@@ -1,10 +1,10 @@
-package com.example.backend_ecoevent.services;
+package com.example.backend_ecoevent.domain.repositories;
 
 import java.util.List;
 
-import com.example.backend_ecoevent.models.Event;
+import com.example.backend_ecoevent.domain.entities.Event;
 
-public interface EventService {
+public interface EventRepository {
     Event createEvent(Event event);
 
     Event updateEvent(Event event);
