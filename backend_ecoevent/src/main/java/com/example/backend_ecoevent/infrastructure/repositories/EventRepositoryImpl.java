@@ -2,9 +2,12 @@ package com.example.backend_ecoevent.infrastructure.repositories;
 
 import java.util.List;
 
+import org.springframework.stereotype.Component;
+
 import com.example.backend_ecoevent.domain.entities.Event;
 import com.example.backend_ecoevent.domain.repositories.EventRepository;
 
+@Component
 public class EventRepositoryImpl implements EventRepository {
 
     private final EventJpaRepository db;
