@@ -1,11 +1,11 @@
-package com.example.backend_ecoevent.controllers;
+package com.example.backend_ecoevent.application.controllers;
 
 import java.util.List;
 
 import javax.validation.Valid;
 
-import com.example.backend_ecoevent.models.Event;
-import com.example.backend_ecoevent.services.EventService;
+import com.example.backend_ecoevent.domain.entities.Event;
+import com.example.backend_ecoevent.domain.services.EventService;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
