@@ -5,6 +5,7 @@ export interface News {
   id: string;
   titulo: string;
   descripcion: string;
+  autor: string;
 }
 
 @Component({
@@ -20,6 +21,7 @@ export class NewsListComponentComponent {
     'id',
     'titulo',
     'description',
+    'autor',
     'botones',
   ];
   dataSource!: MatTableDataSource<any>;

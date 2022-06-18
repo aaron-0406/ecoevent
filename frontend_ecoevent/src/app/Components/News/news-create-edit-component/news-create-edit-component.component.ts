@@ -31,6 +31,7 @@ export class NewsCreateEditComponentComponent implements OnInit {
     id: '',
     titulo: '',
     descripcion: '',
+    autor: '',
   };
 
   //para identificar 'editarNew'

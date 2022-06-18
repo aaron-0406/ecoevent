@@ -23,6 +23,17 @@
     ></textarea>
   </div>
 
+  <div class="mb-3">
+    <label for="autor" class="form-label">Autor</label>
+    <input
+      type="text"
+      class="form-control"
+      name="autor"
+      required
+      [(ngModel)]="newMostrar.autor"
+    />
+  </div>
+
   <button [routerLink]="['/newslist']" class="btn btn-secondary" type="submit">
     Volver
   </button>

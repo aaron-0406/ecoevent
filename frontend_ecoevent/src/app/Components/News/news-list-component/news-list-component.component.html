@@ -22,6 +22,11 @@
     <td mat-cell *matCellDef="let element"> {{element.descripcion}} </td>
   </ng-container>
 
+  <ng-container matColumnDef="autor">
+    <th mat-header-cell *matHeaderCellDef> Autor </th>
+    <td mat-cell *matCellDef="let element"> {{element.autor}} </td>
+  </ng-container>
+
   <ng-container matColumnDef="botones">
     <th mat-header-cell *matHeaderCellDef></th>
     <td mat-cell *matCellDef="let element; let i = index">
