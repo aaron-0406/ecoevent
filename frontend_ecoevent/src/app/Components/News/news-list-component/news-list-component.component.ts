@@ -36,6 +36,12 @@ export class NewsListComponentComponent {
   cargarNoticias(){
     this.listNews = this._newsService.getNews();
     this.dataSource = new MatTableDataSource(this.listNews);
-  } 
+  }
+
+  eliminarNoticia(index: number) {
+    console.log(index);
+    this._newsService.eliminarNoticia(index);
+    this.cargarNoticias();
+  }
 }
 

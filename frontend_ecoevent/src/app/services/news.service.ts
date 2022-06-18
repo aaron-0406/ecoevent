@@ -8,7 +8,7 @@ import { News } from '../Components/News/Model/News';
 
 
 export class NewsService {
-  listNews: News[] = [ 
+  listNews: News[] = [
     {id:'1',titulo:"Noticia1",descripcion:"da"},
     {id:'2',titulo:"Noticia2",descripcion:"da"},
     {id:'3',titulo:"Noticia3",descripcion:"da"}
@@ -36,5 +36,8 @@ export class NewsService {
     this.listNews = listaNoticiasModificadas;
   }
 
+  eliminarNoticia(index: number) {
+    this.listNews.splice(index, 1);
+  }
 
 }
