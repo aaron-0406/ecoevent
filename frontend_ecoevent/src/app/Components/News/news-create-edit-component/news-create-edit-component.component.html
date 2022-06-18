@@ -1,6 +1,6 @@
 <h1>{{ acto }} Noticia</h1>
 
-<form>
+<form (submit)="crearNoticia()">
   <div class="mb-3">
     <label for="titulo" class="form-label">Título</label>
     <input
@@ -8,7 +8,7 @@
       class="form-control"
       name="titulo"
       required
-      [(ngModel)]="newMostrar.titulo"
+      [(ngModel)]="newMostrar.title"
     />
   </div>
 
@@ -19,7 +19,7 @@
       name="descripcion"
       rows="3"
       required
-      [(ngModel)]="newMostrar.descripcion"
+      [(ngModel)]="newMostrar.description"
     ></textarea>
   </div>
 
@@ -37,12 +37,7 @@
   <button [routerLink]="['/newslist']" class="btn btn-secondary" type="submit">
     Volver
   </button>
-  <button
-    *ngIf="accion"
-    (click)="crearNoticia()"
-    class="btn btn-aceptar float-end"
-    type="submit"
-  >
+  <button *ngIf="accion" class="btn btn-aceptar float-end" type="submit">
     Aceptar
   </button>
   <button

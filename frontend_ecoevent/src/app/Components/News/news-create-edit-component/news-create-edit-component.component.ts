@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NewsService } from 'src/app/services/news.service';
 import { News } from '../Model/News';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-news-create-edit-component',
@@ -20,22 +19,26 @@ export class NewsCreateEditComponentComponent implements OnInit {
 
   index: number = this.rutaNews.snapshot.params['id'];
 
+  news: News[] = [];
+
   ngOnInit(): void {
+    //get data of news
+    this._newsService.getNews().subscribe((data) => {
+      data.forEach((newsData) => {
+        if (newsData.id_news == this.index) {
+          this.newMostrar = newsData;
+        }
+      });
+    });
+
     this.esEditar;
-    if (this.accion === false) {
+    if (this.index) {
       this.acto = 'Editar';
     }
   }
 
-  newCreado: News = {
-    id: '',
-    titulo: '',
-    descripcion: '',
-    autor: '',
-  };
-
   //para identificar 'editarNew'
-  accion: boolean = this._newsService.listNews[this.index - 1] ? false : true;
+  accion: boolean = this.news[this.index - 1] ? false : true;
 
   esEditar() {
     if (this.index === 0) {
@@ -43,22 +46,21 @@ export class NewsCreateEditComponentComponent implements OnInit {
     }
   }
 
-  newMostrar: News = this._newsService.listNews[this.index - 1]
-    ? this._newsService.listNews[this.index - 1]
-    : this.newCreado;
+  newMostrar: News = {
+    title: '',
+    description: '',
+    autor: '',
+  };
 
   crearNoticia() {
-    if (this.newCreado.titulo) {
-      this._newsService.crearNoticia({
-        ...this.newMostrar,
-        id: String(this._newsService.listNews.length + 1),
-      });
+    if (this.newMostrar.title) {
+      this._newsService.crearNoticia(this.newMostrar).subscribe();
       this._router.navigate(['/newslist']);
     }
   }
 
   editarNoticia() {
-    this._newsService.editarNoticia(this.newMostrar);
+    this._newsService.editarNoticia(this.newMostrar).subscribe();
     this._router.navigate(['/newslist']);
   }
 }

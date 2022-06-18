@@ -1,43 +1,29 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { News } from '../Components/News/Model/News';
-
+import { environment } from 'src/environments/environment';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-
-
 export class NewsService {
-  listNews: News[] = [
-    {id:'1',titulo:"Noticia1",descripcion:"da", autor: "dd"},
-    {id:'2',titulo:"Noticia2",descripcion:"da", autor: "dd"},
-    {id:'3',titulo:"Noticia3",descripcion:"da", autor: "dd"}
-  ];
+  private apiUrl = `${environment.API}/news`;
 
-  constructor() { }
+  constructor(private http: HttpClient) {}
 
-  getNews(){
-    return this.listNews.slice();
+  getNews() {
+    return this.http.get<News[]>(`${this.apiUrl}`);
   }
 
-  crearNoticia(noticiaNueva: News){
-    this.listNews.push(noticiaNueva);
+  crearNoticia(dto: News) {
+    return this.http.post<News>(`${this.apiUrl}`, dto);
   }
 
-  editarNoticia(noticiaEditar: News){
-    const listaNoticiasModificadas = this.listNews.map((news: News) => {
-      if (news.id === noticiaEditar.id) {
-        return noticiaEditar;
-      }
-
-      return news;
-    });
-
-    this.listNews = listaNoticiasModificadas;
+  editarNoticia(dto: News) {
+    return this.http.put<News>(`${this.apiUrl}`, dto);
   }
 
-  eliminarNoticia(index: number) {
-    this.listNews.splice(index, 1);
+  eliminarNoticia(id: number) {
+    return this.http.delete<string>(`${this.apiUrl}/${id}`);
   }
-
 }

@@ -1,19 +1,13 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { NewsService } from 'src/app/services/news.service';
-export interface News {
-  id: string;
-  titulo: string;
-  descripcion: string;
-  autor: string;
-}
+import { News } from '../Model/News';
 
 @Component({
   selector: 'app-news-list-component',
   templateUrl: './news-list-component.component.html',
-  styleUrls: ['./news-list-component.component.css']
+  styleUrls: ['./news-list-component.component.css'],
 })
-
 export class NewsListComponentComponent {
   listNews: News[] = [];
 
@@ -26,24 +20,24 @@ export class NewsListComponentComponent {
   ];
   dataSource!: MatTableDataSource<any>;
 
-  constructor(private _newsService: NewsService){}
+  constructor(private _newsService: NewsService) {}
 
   ngOnInit(): void {
     this.cargarNoticias();
   }
-  crearNoticia(news: News){
-    this.listNews.push(news);
+  crearNoticia(news: News) {
+    this._newsService.crearNoticia(news);
   }
 
-  cargarNoticias(){
-    this.listNews = this._newsService.getNews();
-    this.dataSource = new MatTableDataSource(this.listNews);
+  cargarNoticias() {
+    this._newsService.getNews().subscribe((data) => {
+      this.dataSource = new MatTableDataSource(data);
+    });
   }
 
   eliminarNoticia(index: number) {
-    console.log(index);
-    this._newsService.eliminarNoticia(index);
-    this.cargarNoticias();
+    this._newsService.eliminarNoticia(index).subscribe(() => {
+      this.cargarNoticias();
+    });
   }
 }
-

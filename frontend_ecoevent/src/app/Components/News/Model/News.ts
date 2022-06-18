@@ -1,6 +1,6 @@
 export class News {
-  id: string = ""; 
-  titulo: string = "";
-  descripcion: string = "";
-  autor: string = "";
+  id_news?: number = 0;
+  title: string = '';
+  description: string = '';
+  autor: string = '';
 }

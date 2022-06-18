@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { Routes, RouterModule } from '@angular/router';
@@ -18,10 +19,9 @@ import { FooterComponent } from './Components/layouts/footer/footer.component';
 import { CrearEventoComponent } from './Components/evento/crear-evento.component';
 import { EventoService } from './services/evento.service';
 import { NewsListComponentComponent } from './Components/News/news-list-component/news-list-component.component';
-import {MatButtonModule} from '@angular/material/button';
+import { MatButtonModule } from '@angular/material/button';
 import { NewsEditComponentComponent } from './Components/News/news-edit-component/news-edit-component.component';
-import { NewsCreateEditComponentComponent } from './Components/News/news-create-edit-component/news-create-edit-component.component'; 
-
+import { NewsCreateEditComponentComponent } from './Components/News/news-create-edit-component/news-create-edit-component.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/eventos', pathMatch: 'full' },
@@ -29,9 +29,9 @@ const routes: Routes = [
   { path: 'eventos/create', component: CrearEventoComponent },
   { path: 'eventos/nuevo/:id', component: CrearEventoComponent },
   // News
-  { path:'newslist',component: NewsListComponentComponent},
-  { path:'nuevaNoticia',component: NewsCreateEditComponentComponent},
-  { path:'editar/:id',component: NewsCreateEditComponentComponent}
+  { path: 'newslist', component: NewsListComponentComponent },
+  { path: 'nuevaNoticia', component: NewsCreateEditComponentComponent },
+  { path: 'editar/:id', component: NewsCreateEditComponentComponent },
 ];
 
 @NgModule({
@@ -48,6 +48,7 @@ const routes: Routes = [
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatSliderModule,
@@ -55,7 +56,7 @@ const routes: Routes = [
     MatIconModule,
     FormsModule,
     RouterModule.forRoot(routes),
-    MatButtonModule
+    MatButtonModule,
   ],
   exports: [MatTableModule, MatIconModule],
   providers: [EventoService],
