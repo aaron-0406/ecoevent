@@ -22,9 +22,9 @@ import { NewsListComponentComponent } from './Components/News/news-list-componen
 import { MatButtonModule } from '@angular/material/button';
 import { NewsEditComponentComponent } from './Components/News/news-edit-component/news-edit-component.component';
 import { NewsCreateEditComponentComponent } from './Components/News/news-create-edit-component/news-create-edit-component.component';
+import { HomeComponentComponent } from './Components/Home/home-component/home-component.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/eventos', pathMatch: 'full' },
   { path: 'eventos', component: EventoComponent },
   { path: 'eventos/create', component: CrearEventoComponent },
   { path: 'eventos/nuevo/:id', component: CrearEventoComponent },
@@ -32,6 +32,10 @@ const routes: Routes = [
   { path: 'newslist', component: NewsListComponentComponent },
   { path: 'nuevaNoticia', component: NewsCreateEditComponentComponent },
   { path: 'editar/:id', component: NewsCreateEditComponentComponent },
+  // Home 
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'home', component:HomeComponentComponent }
+
 ];
 
 @NgModule({
@@ -45,6 +49,7 @@ const routes: Routes = [
     NewsListComponentComponent,
     NewsEditComponentComponent,
     NewsCreateEditComponentComponent,
+    HomeComponentComponent,
   ],
   imports: [
     BrowserModule,
