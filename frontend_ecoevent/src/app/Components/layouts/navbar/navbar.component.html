@@ -17,14 +17,15 @@
 -->
 
       <div id="navbar">
-        <button mat-button routerLink="/home">Inicio</button>
-        <button mat-button>Eventos</button>
-        <button mat-button>Noticias</button>
-        <button mat-button>Puntos de acopio</button>
-        <button mat-button>Horarios</button>
-        <button mat-raised-button color="primary">Is</button>    
+        <button mat-button routerLink="">Inicio</button>
+        <button mat-button routerLink="">Eventos</button>
+        <button mat-button routerLink="/newslist">Noticias</button>
+        <button mat-button routerLink="">Puntos de acopio</button>
+        <button mat-button routerLink="">Horarios</button>
+        <button mat-raised-button color="primary" routerLink="/home">Is</button>    
       </div>
-
 
     </div>
   </div>
+  
+  <router-outlet></router-outlet>
