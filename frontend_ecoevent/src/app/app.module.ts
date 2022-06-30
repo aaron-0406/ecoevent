@@ -24,6 +24,10 @@ import { NewsEditComponentComponent } from './Components/News/news-edit-componen
 import { NewsCreateEditComponentComponent } from './Components/News/news-create-edit-component/news-create-edit-component.component';
 import { HomeComponentComponent } from './Components/Home/home-component/home-component.component';
 
+// Card material 
+
+import {MatCardModule} from '@angular/material/card'; 
+
 const routes: Routes = [
   { path: 'eventos', component: EventoComponent },
   { path: 'eventos/create', component: CrearEventoComponent },
@@ -62,6 +66,7 @@ const routes: Routes = [
     FormsModule,
     RouterModule.forRoot(routes),
     MatButtonModule,
+    MatCardModule
   ],
   exports: [MatTableModule, MatIconModule],
   providers: [EventoService],

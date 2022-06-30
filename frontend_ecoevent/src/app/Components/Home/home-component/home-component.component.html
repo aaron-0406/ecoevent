@@ -7,16 +7,17 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
   </head>
   <body>
+    
     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="assets/imagen/Slider1.png" class="d-block w-100" alt="..." width="1920" height="480">
+            <img src="assets/imagen/Slider1.png" class="d-block w-100" alt="...">
           </div>
           <div class="carousel-item">
-            <img src="assets/imagen/Slider4.jpg" class="d-block w-100" alt="..." width="1920" height="480">
+            <img src="assets/imagen/Slider4.jpg" class="d-block w-100" alt="..." >
           </div>
           <div class="carousel-item">
-            <img src="assets/imagen/Slider6.jpg" class="d-block w-100" alt="..." width="1920" height="480">
+            <img src="assets/imagen/Slider6.jpg" class="d-block w-100" alt="..." >
           </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
@@ -28,12 +29,103 @@
           <span class="visually-hidden">Next</span>
         </button>
       </div>
-
       <section>
 
-        
+        <div class="events">
+  
+            <h1>EVENTOS</h1>
 
+            <div>
+
+              <mat-card class="example-card">
+                <mat-card-title>Shiba Inu</mat-card-title>
+                <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+                <mat-card-content>
+                  <p>This card indeterminates progress bar.</p>
+                  <p>{{longText}}</p>
+                </mat-card-content>
+                <mat-card-actions>
+                  <button mat-button>LIKE</button>
+                  <button mat-button>SHARE</button>
+                </mat-card-actions>
+              </mat-card>
+
+            </div>
+  
+        </div>
+        
       </section>
+
+      <section>
+        <div class="news">
+          <h1>NOTICIAS</h1>
+          <div>
+            <mat-card class="example-card">
+              <mat-card-title>Shiba Inu</mat-card-title>
+              <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+              <mat-card-content>
+                <p>This card indeterminates progress bar.</p>
+                <p>{{longText}}</p>
+              </mat-card-content>
+              <mat-card-actions>
+                <button mat-button>LIKE</button>
+                <button mat-button>SHARE</button>
+              </mat-card-actions>
+            </mat-card>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="PA">
+          <h1>PUNTOS DE ACOPIO</h1>
+          
+        </div>
+      </section>
+      <div class="container-table">
+
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+          <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef>id</th>
+            <td mat-cell *matCellDef="let element">{{ element.id_news }}</td>
+          </ng-container>
+        
+          <!-- Name Column -->
+          <ng-container matColumnDef="titulo">
+            <th mat-header-cell *matHeaderCellDef>Titulo</th>
+            <td mat-cell *matCellDef="let element">{{ element.title }}</td>
+          </ng-container>
+        
+          <ng-container matColumnDef="description">
+            <th mat-header-cell *matHeaderCellDef>Descripcion</th>
+            <td mat-cell *matCellDef="let element">{{ element.description }}</td>
+          </ng-container>
+        
+          <ng-container matColumnDef="autor">
+            <th mat-header-cell *matHeaderCellDef>Autor</th>
+            <td mat-cell *matCellDef="let element">{{ element.autor }}</td>
+          </ng-container>
+        
+          <ng-container matColumnDef="botones">
+            <th mat-header-cell *matHeaderCellDef></th>
+            <td mat-cell *matCellDef="let element; let i = index">
+              <button mat-icon-button>
+                <mat-icon
+                  style="color: green"
+                  [routerLink]="['/editar', element.id_news]"
+                  >editar</mat-icon
+                >
+              </button>
+            </td>
+          </ng-container>
+        
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+        </table>
+
+      </div>  
+
+
       
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>

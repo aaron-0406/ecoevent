@@ -28,9 +28,17 @@ table {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+  margin-left: 50px;
+  margin-bottom: 0px;
 }
 .button-row:hover,
 .button-row:focus {
   background-color: #ffffff;
+}
+
+.container-table{
+  margin-top: 20px;
+  margin-right: 50px;
+  margin-left: 50px;
 }
 

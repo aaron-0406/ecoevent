@@ -2,3 +2,19 @@
     background-color: #36b343;
     color: #FFFFFF;
 }
+
+#events{
+
+    padding: 20px;
+    background-color: #36B346;
+    height: 100px;
+    width: 100px;
+}
+
+.container-news{
+    margin: 50px;
+    margin-top: 2px;
+    
+}
+
+

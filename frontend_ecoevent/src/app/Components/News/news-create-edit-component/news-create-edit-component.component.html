@@ -1,51 +1,54 @@
-<h1>{{ acto }} Noticia</h1>
+<div class="container-news">
 
-<form (submit)="crearNoticia()">
-  <div class="mb-3">
-    <label for="titulo" class="form-label">Título</label>
-    <input
-      type="text"
-      class="form-control"
-      name="titulo"
-      required
-      [(ngModel)]="newMostrar.title"
-    />
-  </div>
-
-  <div class="mb-3">
-    <label for="descripcion" class="form-label">Descripción</label>
-    <textarea
-      class="form-control"
-      name="descripcion"
-      rows="3"
-      required
-      [(ngModel)]="newMostrar.description"
-    ></textarea>
-  </div>
-
-  <div class="mb-3">
-    <label for="autor" class="form-label">Autor</label>
-    <input
-      type="text"
-      class="form-control"
-      name="autor"
-      required
-      [(ngModel)]="newMostrar.autor"
-    />
-  </div>
-
-  <button [routerLink]="['/newslist']" class="btn btn-secondary" type="submit">
-    Volver
-  </button>
-  <button *ngIf="accion" class="btn btn-aceptar float-end" type="submit">
-    Aceptar
-  </button>
-  <button
-    *ngIf="accion === false"
-    (click)="editarNoticia()"
-    class="btn btn-aceptar float-end"
-    type="submit"
-  >
-    Guardar cambios
-  </button>
-</form>
+  <h1>{{ acto }} Noticia</h1>
+  
+  <form (submit)="crearNoticia()">
+    <div class="mb-3">
+      <label for="titulo" class="form-label">Título</label>
+      <input
+        type="text"
+        class="form-control"
+        name="titulo"
+        required
+        [(ngModel)]="newMostrar.title"
+      />
+    </div>
+  
+    <div class="mb-3">
+      <label for="descripcion" class="form-label">Descripción</label>
+      <textarea
+        class="form-control"
+        name="descripcion"
+        rows="3"
+        required
+        [(ngModel)]="newMostrar.description"
+      ></textarea>
+    </div>
+  
+    <div class="mb-3">
+      <label for="autor" class="form-label">Autor</label>
+      <input
+        type="text"
+        class="form-control"
+        name="autor"
+        required
+        [(ngModel)]="newMostrar.autor"
+      />
+    </div>
+  
+    <button [routerLink]="['/newslist']" class="btn btn-secondary" type="submit">
+      Volver
+    </button>
+    <button *ngIf="accion" class="btn btn-aceptar float-end" type="submit">
+      Aceptar
+    </button>
+    <button
+      *ngIf="accion === false"
+      (click)="editarNoticia()"
+      class="btn btn-aceptar float-end"
+      type="submit"
+    >
+      Guardar cambios
+    </button>
+  </form>
+</div>

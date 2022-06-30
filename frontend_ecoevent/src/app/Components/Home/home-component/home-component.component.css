@@ -1,0 +1,99 @@
+#carouselExampleControls img{
+    height:auto;
+    max-height: 100%;
+    width:auto; 
+    max-width: 100%;
+}
+.events{
+}
+
+.events h1{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #36B346;
+    text-align: center;
+    font-size: 30px;
+    color: #ffffff
+}
+
+.events .example-card{
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.news{
+}
+
+.news h1{
+    margin-top: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #36B346;
+    text-align: center;
+    font-size: 30px;
+    color: #ffffff
+}
+
+.news .example-card{
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.PA h1{
+    margin-top: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #36B346;
+    text-align: center;
+    font-size: 30px;
+    color: #ffffff
+}
+
+table {
+    width: 100%;
+  }
+
+.container-table{
+    margin-top: 20px;
+    margin-right: 50px;
+    margin-left: 50px;
+}
+
+  .button-row button,
+  
+.button-row a {
+  background-color: #36b343;
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  height: 40px;
+  line-height: 20px;
+  list-style: none;
+  margin: 20px;
+  outline: none;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+.button-row:hover,
+.button-row:focus {
+  background-color: #ffffff;
+}
+
+
+
+
+
+
