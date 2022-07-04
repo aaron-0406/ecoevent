@@ -1,7 +1,7 @@
 .navbar {
     background-color: #fff;
   }
-  
+
   .navbar-container {
     width: 100%;
     max-width: 1120px;
@@ -12,16 +12,16 @@
     margin: 0 auto;
     position: relative;
   }
-  
+
   .navbar-logo {
     padding-left: 10px;
     display: inline-block;
     vertical-align: middle;
     width: 70px;
     margin-top: auto;
-  
+
   }
-  
+
   .navbar-list {
     list-style: none;
     border-right: 3px solid var(--plomo);
@@ -32,24 +32,24 @@
     top: 121px;
     left: 0;
   }
-  
+
   .navbarHide {
     left: -193px;
     transition: 0.5s;
   }
-  
+
   .navbarShow {
     left: 0;
     transition: 0.5s;
   }
-  
+
   .navbar-list li a {
     color: #000;
     text-decoration: none;
     display: block;
     padding: 10px 0;
   }
-  
+
   .navbar-button a {
     border: none;
     width: 50px;
@@ -61,7 +61,7 @@
     text-decoration: none;
     display: inline-block;
   }
-  
+
   @media (min-width: 426px) {
     .navbar-list {
       display: flex;
@@ -70,22 +70,22 @@
       background-color: var(--azul-oscuro);
       border-right: 0;
     }
-  
+
     .navbar-list li a {
       color: #000;
       font-size: 15px;
       font-weight: 500;
       padding: 5px 20px;
     }
-  
+
     .navbar-button .navbar-button__toggle {
       display: none;
     }
   }
-  
+
   @media (min-width: 769px) {
   }
-  
+
   /*
   nav 2
   */
@@ -93,3 +93,11 @@
   #navbar{
     margin: 20px;
   }
+  #navbar button{
+    margin: 5px;
+  }
+  .register{
+    padding: 6px;
+    border-radius: solid 5px blue;
+  }
+

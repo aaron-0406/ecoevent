@@ -24,9 +24,12 @@ import { NewsEditComponentComponent } from './Components/News/news-edit-componen
 import { NewsCreateEditComponentComponent } from './Components/News/news-create-edit-component/news-create-edit-component.component';
 import { HomeComponentComponent } from './Components/Home/home-component/home-component.component';
 
-// Card material 
+// Card material
 
-import {MatCardModule} from '@angular/material/card'; 
+import {MatCardModule} from '@angular/material/card';
+import { RegisterComponent } from './Components/User/register/register.component';
+import { LoginComponent } from './Components/User/login/login.component';
+import { ProfileComponent } from './Components/User/profile/profile.component';
 
 const routes: Routes = [
   { path: 'eventos', component: EventoComponent },
@@ -36,9 +39,12 @@ const routes: Routes = [
   { path: 'newslist', component: NewsListComponentComponent },
   { path: 'nuevaNoticia', component: NewsCreateEditComponentComponent },
   { path: 'editar/:id', component: NewsCreateEditComponentComponent },
-  // Home 
+  // Home
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home', component:HomeComponentComponent }
+  { path: 'home', component:HomeComponentComponent },
+  //register
+  { path: 'register', component: RegisterComponent },
+
 
 ];
 
@@ -54,6 +60,9 @@ const routes: Routes = [
     NewsEditComponentComponent,
     NewsCreateEditComponentComponent,
     HomeComponentComponent,
+    RegisterComponent,
+    LoginComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,
