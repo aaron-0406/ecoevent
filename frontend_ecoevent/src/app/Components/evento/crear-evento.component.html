@@ -1,5 +1,5 @@
 
-<div class="container-forms"> 
+<div class="container-forms">
   <H1>Creación de Eventos</H1>
 
   <form class="row g-3">
@@ -13,7 +13,7 @@
         [(ngModel)]="eventoMostrar.titulo"
       />
     </div>
-  
+
     <div class="col-md-12">
       <label for="input" class="form-label">Descripción</label>
       <input
@@ -24,7 +24,7 @@
         required
       />
     </div>
-  
+
     <div class="col-md-6">
       <label for="inputAddress2" class="form-label">Lugar</label>
       <input
@@ -35,7 +35,7 @@
         [(ngModel)]="eventoMostrar.lugar"
       />
     </div>
-  
+
     <div class="col-md-4">
       <label for="dateofevent" class="form-label">Dia del Evento</label>
       <div class="form-label">
@@ -48,7 +48,7 @@
         />
       </div>
     </div>
-  
+
     <div class="col-md-2">
       <label for="inputAddress2" class="form-label">Hora del evento</label>
       <input
@@ -60,12 +60,12 @@
         [(ngModel)]="eventoMostrar.hora"
       />
     </div>
-  
+
     <div class="col-12">
       <label for="" class="form-label">Subir foto</label>
       <input type="file" class="form-control" id="inputGroupFile02" />
     </div>
-  
+
     <div class="col-md-4">
       <button [routerLink]="['/eventos']" class="btn btn-secondary" type="submit">
         Cancelar

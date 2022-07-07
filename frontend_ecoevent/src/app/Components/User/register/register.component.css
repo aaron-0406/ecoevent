@@ -1,0 +1,66 @@
+.container {
+  justify-content: center;
+  background: rgb(82, 177, 84);
+  background: linear-gradient(
+    49deg,
+    rgba(82, 177, 84, 1) 0%,
+    rgba(218, 221, 241, 1) 25%,
+    rgba(120, 255, 138, 1) 43%,
+    rgba(218, 221, 241, 1) 63%,
+    rgba(120, 255, 138, 1) 85%,
+    rgba(82, 177, 84, 1) 100%
+  );
+
+  width: 400px;
+  border-radius: 30px;
+  padding: 60px 40px;
+}
+h1 {
+  font-size: 40px;
+  text-align: center;
+  margin-bottom: 55px;
+  color: rgb(27, 27, 27);
+  font-weight: bold;
+}
+.register {
+  padding: 10px;
+  border-radius: 7px;
+  border: none;
+  background-color: rgb(27, 27, 27);
+  color: #ffff;
+  display: block;
+  width: 100%;
+  margin-bottom: 25px;
+  margin-top: 25px;
+}
+.login {
+  padding: 10px;
+  background-color: #ffff;
+  border: 1px solid black;
+  border-radius: 7px;
+  color: black;
+  width: 100%;
+  font-size: 15px;
+}
+.caja {
+  display: flex;
+  flex-direction: row;
+}
+label {
+  height: 40px;
+  width: 110px;
+  text-align: left;
+  align-content: center;
+  padding: 10px 8px;
+  /* padding-top: 10px;
+  padding-left: 100x; */
+  border-radius: 2px;
+  background-color: rgb(27, 27, 27);
+  color: #ffff;
+  margin-right: 0;
+}
+input {
+  border-radius: 2px;
+  height: 40px;
+  margin-left: 0;
+}

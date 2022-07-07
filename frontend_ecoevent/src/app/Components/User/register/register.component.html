@@ -1,1 +1,23 @@
-<p>register works!</p>
+<div class="container">
+  <form #myForm="ngForm" (ngSubmit)="register(objetoUsuario)" >
+    <h1>REGÍSTRATE</h1>
+    <div class="mb-3 caja">
+      <label for="nombres" class="form-label">Nombres</label>
+      <input type="text" class="form-control" name="nombres" autocomplete="off" required [(ngModel)]="objetoUsuario.nombres"/>
+    </div>
+    <div class="mb-3 caja">
+      <label for="apellidos" class="form-label">Apellidos</label>
+      <input type="text" class="form-control" name="apellidos"  autocomplete="off" [(ngModel)]="objetoUsuario.apellidos" />
+    </div>
+    <div class="mb-3 caja">
+      <label for="email" class="form-label">Email</label>
+      <input type="email" class="form-control" name="email" autocomplete="off" [(ngModel)]="objetoUsuario.email" />
+    </div>
+    <div class="mb-3 caja">
+      <label for="contra" class="form-label">Contraseña</label>
+      <input type="password" class="form-control" name="contra"  autocomplete="off" [(ngModel)]="objetoUsuario.contra" />
+    </div>
+    <button class="register" [disabled]="myForm.invalid" type="submit">Registrar</button>
+    <button class="login" routerLink="/login">Iniciar sesion</button>
+  </form>
+</div>
