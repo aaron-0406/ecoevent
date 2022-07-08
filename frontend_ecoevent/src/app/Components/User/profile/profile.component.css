@@ -1,0 +1,105 @@
+#Component{
+    background-color: #36B346;
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    padding: 10px;
+    padding-top: 20px;
+}
+
+.Perfil-portada .Perfil img{
+    border-radius: 55%;
+    border-width: 5px;
+    border-style: solid;
+    border-color:#36B346;
+    width: 200px;
+    height: 200px;
+    max-width: auto;
+    max-height: auto;
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.Perfil-portada button{
+    background-color: #36B346;
+    color: white;
+    border-radius: 20px;
+    padding: 10px;
+    margin-left: 70px;
+    border-style: solid;
+}
+
+.main{
+    display: flex;
+}
+
+@media(max-width :900px){
+    .main{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.main .container1{
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-top: 20px;
+    font-size: 15px;
+    flex: 1;
+}
+.container1 h1{
+    font-size: 20px;
+    display: flex;
+}
+.container1 .Edit-info{
+    display: flex;
+}
+.container1 .Edit-info h1{
+    font-size: 20px;
+    flex: 1;
+}
+.container1 .Edit-info img{
+    width: 25px;
+    height: 25px;
+    flex: 1;
+    flex-grow: unset;
+    margin: 0px;
+}
+.container1 .Edit-info button{
+    background-color: white;
+    border-style: solid;
+    border-color: white;
+}
+
+.container2{
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
+    flex: 1;
+}
+
+.container2 hr{
+    margin-top: 31px;
+}
+
+
+.container2 .Edit-info{
+    display: flex;
+    flex-direction: row;
+}
+
+.container3{
+    padding-top: 20px;
+    flex: 1;
+    padding-right: 20px;
+    padding-left: 20px;
+    font-size: 20px;
+}
+.container3 hr{
+    margin-top: 31px;
+}
+
+.container3 h1{
+    font-size: 25px ;
+}

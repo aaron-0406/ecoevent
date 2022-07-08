@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -33,6 +33,7 @@ import {MatCardModule} from '@angular/material/card';
 import { RegisterComponent } from './Components/User/register/register.component';
 import { LoginComponent } from './Components/User/login/login.component';
 import { ProfileComponent } from './Components/User/profile/profile.component';
+import { combineLatestInit } from 'rxjs/internal/observable/combineLatest';
 
 const routes: Routes = [
   { path: 'eventos', component: EventoComponent },
@@ -49,6 +50,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   //login
   { path: 'login', component: LoginComponent},
+  { path: 'profile', component: ProfileComponent},
 
 
 ];
