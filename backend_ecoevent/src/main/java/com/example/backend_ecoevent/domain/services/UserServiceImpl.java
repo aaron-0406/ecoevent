@@ -1,8 +1,11 @@
 package com.example.backend_ecoevent.domain.services;
 
+import org.springframework.stereotype.Service;
+
 import com.example.backend_ecoevent.domain.entities.User;
 import com.example.backend_ecoevent.infrastructure.repositories.UserRepositoryImpl;
 
+@Service
 public class UserServiceImpl implements UserService {
     private final UserRepositoryImpl userRepository;
 

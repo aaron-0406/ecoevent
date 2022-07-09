@@ -16,7 +16,7 @@ import com.example.backend_ecoevent.domain.entities.User;
 import com.example.backend_ecoevent.domain.services.UserService;
 
 @RestController
-@RequestMapping("/news")
+@RequestMapping("/user")
 public class UserController {
     private final UserService userService;
 
@@ -36,7 +36,7 @@ public class UserController {
         return new ResponseEntity<User>(userUpdated, HttpStatus.CREATED);
     }
 
-    @PostMapping
+    @PostMapping("/login")
     public ResponseEntity<Boolean> login(@Valid @RequestBody Integer id, String user) {
         Boolean validate = userService.login(user, id);
         return new ResponseEntity<Boolean>(validate, HttpStatus.CREATED);

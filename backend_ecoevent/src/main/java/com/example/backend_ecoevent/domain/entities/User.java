@@ -9,43 +9,38 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 @Entity
-@Table(name = "user")
+@Table(name = "users")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_user")
     private Integer id_user;
 
-    @NotNull
-    @Column(name = "dni", nullable = false, length = 8)
+    @Column(name = "dni", length = 8)
     private String dni;
 
-    @NotNull
-    @Column(name = "name", nullable = false, length = 40)
+    @Column(name = "name", length = 40)
     private String name;
 
-    @NotNull
-    @Column(name = "lastName", nullable = false, length = 40)
+    @Column(name = "lastName", length = 40)
     private String lastName;
 
-    @NotNull
-    @Column(name = "user", nullable = false, length = 40)
-    private String user;
+    @Column(name = "user_name", length = 40)
+    private String user_name;
 
-    @NotNull
-    @Column(name = "password", nullable = false, length = 40)
+    @Column(name = "password", length = 40)
     private String password;
 
     public User() {
     }
 
     public User(Integer id_user, String dni, String name,
-            String lastName, String user, String password) {
+            String lastName, String user_name, String password) {
         this.id_user = id_user;
         this.dni = dni;
         this.name = name;
         this.lastName = lastName;
-        this.user = user;
+        this.user_name = user_name;
         this.password = password;
     }
 
@@ -81,12 +76,12 @@ public class User {
         this.lastName = lastName;
     }
 
-    public String getUser() {
-        return this.user;
+    public String getUserName() {
+        return this.user_name;
     }
 
-    public void setUser(String user) {
-        this.user = user;
+    public void setUserName(String user_name) {
+        this.user_name = user_name;
     }
 
     public String getPassword() {
