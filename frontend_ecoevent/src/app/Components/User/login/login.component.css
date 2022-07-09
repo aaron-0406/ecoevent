@@ -1,0 +1,127 @@
+:root{
+    --verde: #36b343;
+    --verdeClaro: #A4FDAD;
+    --verdeOscuro: #198424;
+    --blanco: #ffff;
+    --fuente: 'Fira Sans', sans-serif;
+}
+
+html{
+    box-sizing: border-box;
+}
+
+*,*::after, *::before{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: var(--fuente);
+    display: flex;
+    align-items: center;
+    height: 100vh;
+}
+
+body{
+    background-image: url("https://img.freepik.com/foto-gratis/conservacion-ambiental-jardin-ninos_1150-15276.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+.contenedor{
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 1200px;
+    width: 95%;
+}
+
+/*.imagen-formulario{
+    background-image: url("https://img.freepik.com/foto-gratis/conservacion-ambiental-jardin-ninos_1150-15276.jpg");
+    background-position: center center;
+    background-size: cover;
+    height: 200px;
+    flex: 0 0 calc(60%);
+    position: relative;
+}
+
+.imagen-formulario::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to right, rgba(141,169,196,.5), rgba(72, 219, 87,.5));
+}
+
+@media(min-width:768px){
+    .imagen-formulario{
+        height: auto;
+        background-position: right;
+    }
+}
+
+@media(min-width:1200px){
+    .imagen-formulario{
+        background-position: center;
+    }
+}*/
+
+@media(min-width:768px){
+    .contenedor-formulario{
+        display: flex;
+    }
+}
+
+.formulario{
+    padding: 50px;
+    background: rgba(248, 249, 249 , 0.80);
+    flex: 0 0 calc(50%);
+    display: block;
+    width: 400px;
+    border-radius: 20px;
+}
+
+.texto-formulario h2, .input label, .password-olvidada a, .texto-formulario p{
+    color: black;
+}
+
+.texto-formulario h2{
+    font-size: 40px;
+    text-align: center;
+}
+
+.texto-formulario p{
+    font-size: 22px;
+    text-align: center;
+}
+
+.input label{
+    display: block;
+    font-size: 22px;
+    font-weight: 400;
+    margin: 20px 0;
+}
+
+.input input{
+    width: 100%;
+    padding: 5px 16px;
+    border-radius: 5px;
+    outline: none;
+    background: rgba(248, 249, 249 , 0.80);
+}
+
+.input input[type="submit"]{
+    background-color: #36b343;
+    color: #EAEFEB;
+    font-size: 18px;
+    font-weight: 500;
+    border: none;
+    margin-top: 20px;
+    transition: background-color .3s ease-in-out;
+}
+
+.input input[type="submit"]:hover{
+    cursor: pointer;
+    background-color: #198424;
+}
