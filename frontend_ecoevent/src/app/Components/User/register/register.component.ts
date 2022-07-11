@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, NgForm } from '@angular/forms';
+import { AuthService } from 'src/app/services/auth-service/auth.service';
 import { Usuario } from '../Model/Usuario';
 
 @Component({
@@ -9,29 +10,24 @@ import { Usuario } from '../Model/Usuario';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit(): void {
-
-  }
-
-  usuarios: Usuario[] = [];
+  constructor(private AuthService:AuthService) { }
 
   objetoUsuario: Usuario = {
+    id:'',
     nombres:'',
     apellidos:'',
     email:'',
     contra:'',
   };
-
-  register(u : Usuario){
-
-    this.usuarios.push(u);
-    console.log(u.nombres);
-    this.objetoUsuario.nombres="";
-    this.objetoUsuario.apellidos="";
-    this.objetoUsuario.email="";
-    this.objetoUsuario.contra="";
+  ngOnInit(): void {
 
   }
+  usuariosService: Usuario[] = this.AuthService.usuarios; 
+
+
+  registerService(){
+    this.AuthService.ResgistrarUserService(this.objetoUsuario); 
+    console.log(this.usuariosService);
+  }
+
 }

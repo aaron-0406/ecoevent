@@ -35,6 +35,7 @@ import { LoginComponent } from './Components/User/login/login.component';
 import { ProfileComponent } from './Components/User/profile/profile.component';
 import { combineLatestInit } from 'rxjs/internal/observable/combineLatest';
 import { EditProfileComponentComponent } from './Components/User/profile/edit-profile-component/edit-profile-component.component';
+import { AuthService } from './services/auth-service/auth.service';
 
 const routes: Routes = [
   { path: 'eventos', component: EventoComponent },
@@ -89,7 +90,7 @@ const routes: Routes = [
     MatCardModule
   ],
   exports: [MatTableModule, MatIconModule],
-  providers: [EventoService],
+  providers: [EventoService,AuthService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
