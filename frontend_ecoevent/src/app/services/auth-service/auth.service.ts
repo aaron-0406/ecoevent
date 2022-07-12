@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {Router } from '@angular/router';
-import { Usuario } from 'src/app/Components/User/Model/Usuario';
+import { Usuario } from 'src/app/Components/User/PrototypeUser/Usuario';
 @Injectable({
   providedIn: 'root'
 })
@@ -16,18 +16,18 @@ export class AuthService {
     new Usuario("5","Kiara","Requenes","Requenes@hotmail.com","666"),
   ];
 
-  ResgistrarUserService(user:Usuario){
-    this.usuarios.push(user); 
+  RegistrarUserService(user:Usuario){
+    this.usuarios.push(user);
   }
 
   CapturarUserService(id:String){
     for (let index = 0; index < this.usuarios.length; index++) {
-      if (this.usuarios[index].id == id) { 
-        return index; 
+      if (this.usuarios[index].id == id) {
+        return index;
       }
       else{
         console.log("No lo encontre");
-        
+
       }
     }
     return "UsuarioProfile"
@@ -37,14 +37,14 @@ export class AuthService {
     for (let index = 0; index < this.usuarios.length; index++) {
       if (this.usuarios[index].email == email && this.usuarios[index].contra == contra) {
         console.log("Usuario encontrado: " + this.usuarios[index]);
-        let id = this.usuarios[index].id; 
-        this.route.navigate(['/profile',id]); 
+        let id = this.usuarios[index].id;
+        this.route.navigate(['/profile',id]);
         return id;
 
       }
       else{
         let respuestaNegativa =console.log("Usuario no encontrado");
-        return respuestaNegativa;   
+        return respuestaNegativa;
       }
     }
   }

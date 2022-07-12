@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, NgForm } from '@angular/forms';
-import { AuthService } from 'src/app/services/auth-service/auth.service';
-import { Usuario } from '../Model/Usuario';
+import { Usuario } from '../PrototypeUser/Usuario';
+import { AuthService } from '../../../services/auth-service/auth.service';
+
 
 @Component({
   selector: 'app-register',
@@ -22,11 +23,11 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
 
   }
-  usuariosService: Usuario[] = this.AuthService.usuarios; 
+  usuariosService: Usuario[] = this.AuthService.usuarios;
 
 
   registerService(){
-    this.AuthService.ResgistrarUserService(this.objetoUsuario); 
+    this.AuthService.RegistrarUserService(this.objetoUsuario);
     console.log(this.usuariosService);
   }
 
