@@ -1,5 +1,5 @@
 <div class="container">
-  <form #myForm="ngForm" (ngSubmit)="register(objetoUsuario)" >
+  <form>
     <h1>REGÍSTRATE</h1>
     <div class="mb-3 caja">
       <label for="nombres" class="form-label">Nombres</label>
@@ -17,7 +17,7 @@
       <label for="contra" class="form-label">Contraseña</label>
       <input type="password" class="form-control" name="contra"  autocomplete="off" [(ngModel)]="objetoUsuario.contra" />
     </div>
-    <button class="register" [disabled]="myForm.invalid" type="submit">Registrar</button>
+    <button class="register" [disabled]="" type="submit" (click)="registerService()">Registrar</button>
     <button class="login" routerLink="/login">Iniciar sesion</button>
   </form>
 </div>

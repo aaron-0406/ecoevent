@@ -25,13 +25,13 @@
             </div>
 
             <div class="input">
-                <label for="usuario">Usuario</label>
-                <input placeholder="Ingresa tu usuario" type="text" id="usuario">
+                <label for="usuario">Email</label>
+                <input placeholder="Ingresa tu usuario" type="text" id="usuario" name="email" [(ngModel)]="email">
             </div>
 
             <div class="input">
                 <label for="contraseña">Contraseña</label>
-                <input placeholder="Ingresa tu contraseña" type="password" id="contraseña">
+                <input placeholder="Ingresa tu contraseña" type="password" id="contraseña" name="contra" [(ngModel)]="contra" >
             </div>
             
             <div class="password-olvidada">
@@ -39,7 +39,7 @@
             </div>
 
             <div class="input">
-                <input type="submit" value="Iniciar sesión">
+                <input type="submit" value="Iniciar sesión" (click)="CreateSesion()">
             </div>
 
             <div class="registrarme">

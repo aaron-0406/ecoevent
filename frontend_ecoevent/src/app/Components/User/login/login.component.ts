@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/services/auth-service/auth.service';
 
 import { Usuario } from '../Model/Usuario'
 @Component({
@@ -7,6 +8,8 @@ import { Usuario } from '../Model/Usuario'
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  
+  constructor(private AuthService:AuthService) {}
 
   //Datos de login
   email: string = '';
@@ -16,12 +19,10 @@ export class LoginComponent implements OnInit {
   showError: boolean = false;
   messageError: string = '';
 
-  private profile: Usuario | null = null;
-  
-  constructor() { }
-
   ngOnInit(): void {
   }
 
-  
+  CreateSesion(){
+    this.AuthService.LoginUserService(this.email,this.contra);    
+  }
 }
