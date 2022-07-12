@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
-import { News } from '../../News/Model/News';
+import { News } from '../../News/Prototype/News';
+
 
 @Component({
   selector: 'app-home-component',
@@ -10,7 +11,7 @@ import { News } from '../../News/Model/News';
 export class HomeComponentComponent implements OnInit {
 
   constructor() { }
-  
+
   ngOnInit(): void {
   }
     longText = `The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog

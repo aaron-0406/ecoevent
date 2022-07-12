@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NewsService } from 'src/app/services/news.service';
-import { News } from '../Model/News';
+import { News } from '../Prototype/News';
+
 
 @Component({
   selector: 'app-news-create-edit-component',
@@ -22,7 +23,7 @@ export class NewsCreateEditComponentComponent implements OnInit {
   news: News[] = [];
 
   ngOnInit(): void {
-    //get data of news
+    //get data from news
     this._newsService.getNews().subscribe((data) => {
       data.forEach((newsData) => {
         if (newsData.id_news == this.index) {

@@ -18,13 +18,13 @@ import { LayoutComponent } from './Components/layouts/layout/layout.component';
 import { FooterComponent } from './Components/layouts/footer/footer.component';
 import { CrearEventoComponent } from './Components/evento/crear-evento.component';
 import { EventoService } from './services/evento.service';
-import { NewsListComponentComponent } from './Components/News/news-list-component/news-list-component.component';
+import { NewsListComponentComponent } from './Components/News/news-list-component-prototype/news-list-component.component';
 import { MatButtonModule } from '@angular/material/button';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 
-import { NewsEditComponentComponent } from './Components/News/news-edit-component/news-edit-component.component';
-import { NewsCreateEditComponentComponent } from './Components/News/news-create-edit-component/news-create-edit-component.component';
+import { NewsEditComponentComponent } from './Components/News/news-edit-component-prototype/news-edit-component.component';
+import { NewsCreateEditComponentComponent } from './Components/News/news-create-edit-component-prototype/news-create-edit-component.component';
 import { HomeComponentComponent } from './Components/Home/home-component/home-component.component';
 
 // Card material

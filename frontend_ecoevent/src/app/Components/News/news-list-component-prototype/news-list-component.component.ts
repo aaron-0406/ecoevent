@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { NewsService } from 'src/app/services/news.service';
-import { News } from '../Model/News';
+import { News } from '../Prototype/News';
+
 
 @Component({
   selector: 'app-news-list-component',
