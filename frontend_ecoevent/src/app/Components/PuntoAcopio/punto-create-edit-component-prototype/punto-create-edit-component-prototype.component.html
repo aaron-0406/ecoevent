@@ -1,1 +1,48 @@
-<p>punto-create-edit-component-prototype works!</p>
+<div class="container-puntos">
+
+    <h1>Puntos de Acopio</h1>
+    
+    <form>
+      <div class="mb-3">
+        <label for="distrito" class="form-label">Distrito</label>
+        <input
+          type="text"
+          class="form-control"
+          name="distrito"
+        />
+      </div>
+    
+      <div class="mb-3">
+        <label for="direccion" class="form-label">Direccion</label>
+        <input
+          class="form-control"
+          name="direccion"
+          rows="3"
+        />
+      </div>
+    
+      <div class="mb-3">
+        <label for="horario" class="form-label">Horario</label>
+        <input
+          type="text"
+          class="form-control"
+          name="horario"
+        />
+      </div>
+    
+      <button [routerLink]="['/puntoAcopio']" class="btn btn-secondary" type="submit">
+        Volver
+      </button>
+      <button class="btn btn-aceptar float-end" type="submit">
+        Aceptar
+      </button>
+      <button
+       
+        class="btn btn-aceptar float-end"
+        type="submit"
+      >
+        Guardar cambios
+      </button>
+    </form>
+  </div>
+  
