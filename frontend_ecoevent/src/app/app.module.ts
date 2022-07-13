@@ -36,8 +36,11 @@ import { ProfileComponent } from './Components/User/profile/profile.component';
 import { combineLatestInit } from 'rxjs/internal/observable/combineLatest';
 import { EditProfileComponentComponent } from './Components/User/profile/edit-profile-component/edit-profile-component.component';
 import { AuthService } from './services/auth-service/auth.service';
+import { PuntoCreateEditComponentPrototypeComponent } from './Components/PuntoAcopio/punto-create-edit-component-prototype/punto-create-edit-component-prototype.component';
+import { PuntoListComponentPrototypeComponent } from './Components/PuntoAcopio/punto-list-component-prototype/punto-list-component-prototype.component';
 
 const routes: Routes = [
+  // Eventos
   { path: 'eventos', component: EventoComponent },
   { path: 'eventos/create', component: CrearEventoComponent },
   { path: 'eventos/nuevo/:id', component: CrearEventoComponent },
@@ -54,9 +57,11 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent},
   //profile
   { path: 'profile/:id', component: ProfileComponent},
-  { path: 'edit-profile', component: EditProfileComponentComponent}
-
-
+  { path: 'edit-profile', component: EditProfileComponentComponent},
+  // Puntos de Acopio
+  { path: 'puntoAcopio', component: PuntoListComponentPrototypeComponent },
+  { path: 'nuevoPunto', component: PuntoCreateEditComponentPrototypeComponent },
+  { path: 'editarPunto/:id', component: PuntoCreateEditComponentPrototypeComponent },
 ];
 
 @NgModule({
@@ -75,6 +80,8 @@ const routes: Routes = [
     LoginComponent,
     ProfileComponent,
     EditProfileComponentComponent,
+    PuntoCreateEditComponentPrototypeComponent,
+    PuntoListComponentPrototypeComponent
   ],
   imports: [
     BrowserModule,
