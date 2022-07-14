@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth-service/auth.service';
 import { Usuario } from '../PrototypeUser/Usuario';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-profile',
@@ -16,7 +17,7 @@ export class ProfileComponent implements OnInit {
   Correo:String=''; 
   
 
-  constructor(private routeCaptureid:ActivatedRoute, private serviceAuth:AuthService,private route:Router){ }
+  constructor(private routeCaptureid:ActivatedRoute, private serviceAuth:AuthService,private route:Router, private dialogRef:MatDialog){ }
   usuarioData: Usuario [] = this.serviceAuth.usuarios;
   
   ngOnInit(): void {
@@ -37,6 +38,15 @@ export class ProfileComponent implements OnInit {
     this.route.navigate(['/edit-profile',id]);
   }
 
+    DeleteUser(){
+    this.id = this.routeCaptureid.snapshot.params['id'];
+    let userId = this.serviceAuth.CapturarUserService(this.id);
+    let id = Number(userId);
+    this.serviceAuth.EliminacionUser(id)
+    this.route.navigate(['/login']);
+    console.log(this.usuarioData);
+    
+  }
 
   
 

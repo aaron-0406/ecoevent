@@ -39,6 +39,8 @@ import { AuthService } from './services/auth-service/auth.service';
 import { PuntoCreateEditComponentPrototypeComponent } from './Components/PuntoAcopio/punto-create-edit-component-prototype/punto-create-edit-component-prototype.component';
 import { PuntoListComponentPrototypeComponent } from './Components/PuntoAcopio/punto-list-component-prototype/punto-list-component-prototype.component';
 
+//Modal material 
+import {MatDialogModule} from '@angular/material/dialog';
 const routes: Routes = [
   // Eventos
   { path: 'eventos', component: EventoComponent },
@@ -81,7 +83,7 @@ const routes: Routes = [
     ProfileComponent,
     EditProfileComponentComponent,
     PuntoCreateEditComponentPrototypeComponent,
-    PuntoListComponentPrototypeComponent
+    PuntoListComponentPrototypeComponent,
   ],
   imports: [
     BrowserModule,
@@ -94,7 +96,8 @@ const routes: Routes = [
     FormsModule,
     RouterModule.forRoot(routes),
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
+    MatDialogModule
   ],
   exports: [MatTableModule, MatIconModule],
   providers: [EventoService,AuthService],

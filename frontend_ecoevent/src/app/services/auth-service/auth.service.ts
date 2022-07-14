@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import {Router } from '@angular/router';
 import { Usuario } from 'src/app/Components/User/PrototypeUser/Usuario';
+import { MatDialog } from '@angular/material/dialog';
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  constructor(private route:Router) { }
+  constructor(private route:Router,private dialogRef:MatDialog) { }
 
   usuarios: Usuario[] = [
     new Usuario("1","Luis","Silva","Balladares@hotmail.com","666"),
@@ -49,7 +50,7 @@ export class AuthService {
     }
   }
 
-  ModificarUserService(idRecibido:number,Nombres:String,Apellidos:String,Correo:String){
+  ModificarUserService(idRecibido:number,Nombres:String,Apellidos:String,Correo:String,){
     this.usuarios[idRecibido].nombres = Nombres; 
     this.usuarios[idRecibido].apellidos = Apellidos;
     this.usuarios[idRecibido].email = Correo; 
@@ -58,5 +59,12 @@ export class AuthService {
   }
   CancelActionMod_Elim(id:number){
     this.route.navigate(['/profile',id]);
+  }
+
+  EliminacionUser(id:number){
+    this.usuarios.splice(id,id+1) 
+    console.log(id);
+    
+    console.log(this.usuarios)
   }
 }
