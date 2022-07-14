@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'app-punto-list-component-prototype',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PuntoListComponentPrototypeComponent implements OnInit {
 
-  constructor() { }
+  displayedColumns: string[] = [
+    'id',
+    'Distrito',
+    'Direccion',
+    'Horario',
+    'botones',
+  ];
+  dataSource!: MatTableDataSource<any>;
+
+  constructor() {}
 
   ngOnInit(): void {
+    
   }
+
 
 }
