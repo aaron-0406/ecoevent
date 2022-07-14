@@ -1,6 +1,6 @@
 <div class="container-puntos">
 
-    <h1>Puntos de Acopio</h1>
+    <h1>{{ acto }} Punto de Acopio</h1>
     
     <form>
       <div class="mb-3">
@@ -9,6 +9,8 @@
           type="text"
           class="form-control"
           name="distrito"
+          required
+          [(ngModel)]="puntosMostrar.distrito"
         />
       </div>
     
@@ -18,6 +20,8 @@
           class="form-control"
           name="direccion"
           rows="3"
+          required
+          [(ngModel)]="puntosMostrar.direccion"
         />
       </div>
     
@@ -27,17 +31,20 @@
           type="text"
           class="form-control"
           name="horario"
+          required
+          [(ngModel)]="puntosMostrar.horario"
         />
       </div>
     
       <button [routerLink]="['/puntoAcopio']" class="btn btn-secondary" type="submit">
         Volver
       </button>
-      <button class="btn btn-aceptar float-end" type="submit">
+      <button *ngIf="accion" class="btn btn-aceptar float-end" type="submit">
         Aceptar
       </button>
       <button
-       
+        *ngIf="accion === false"
+        (click)="editarPunto()"       
         class="btn btn-aceptar float-end"
         type="submit"
       >
