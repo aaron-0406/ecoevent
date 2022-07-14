@@ -57,7 +57,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent},
   //profile
   { path: 'profile/:id', component: ProfileComponent},
-  { path: 'edit-profile', component: EditProfileComponentComponent},
+  { path: 'edit-profile/:id', component: EditProfileComponentComponent},
   // Puntos de Acopio
   { path: 'puntoAcopio', component: PuntoListComponentPrototypeComponent },
   { path: 'nuevoPunto', component: PuntoCreateEditComponentPrototypeComponent },

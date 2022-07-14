@@ -5,26 +5,20 @@
 
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Nombres</label>
-            <input type="email" class="form-control" id="exampleFormControlInput1">
+            <input type="email" class="form-control" id="exampleFormControlInput1" name="Nombres" [(ngModel)]="Nombres">
         </div>
         <div class="mb-3">
             <label for="exampleFormControlTextarea1" class="form-label">Apellidos</label>
-                    <input type="email" class="form-control" id="exampleFormControlInput2">
+                    <input type="email" class="form-control" id="exampleFormControlInput2" name="Apellidos" [(ngModel)]="Apellidos">
         </div>
-
         <div class="mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label">Genero</label>
-                    <input type="email" class="form-control" id="exampleFormControlInput3">
-        </div>
-
-        <div class="mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label">Correo</label>
-                    <input type="email" class="form-control" id="exampleFormControlInput4">
+            <label for="exampleFormControlTextarea1" class="form-label" >Correo</label>
+                    <input type="email" class="form-control" id="exampleFormControlInput4" name="Correo" [(ngModel)]="Correo">
         </div>
         <div class="buttons">
 
-            <button class="btn1">Cancelar</button>
-            <button class="btn2">Guardar</button>
+            <button class="btn1" (click)="RegresarPerfil()">Cancelar</button>
+            <button class="btn2" (click)="ModificarInformacion()">Guardar</button>
 
         </div>
 

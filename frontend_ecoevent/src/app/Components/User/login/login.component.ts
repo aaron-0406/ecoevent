@@ -18,6 +18,7 @@ export class LoginComponent implements OnInit {
   messageError: string = '';
 
   ngOnInit(): void {
+    
   }
 
   CreateSesion(){

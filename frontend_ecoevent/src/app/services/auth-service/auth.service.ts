@@ -49,7 +49,14 @@ export class AuthService {
     }
   }
 
-  ModificarUserService(){
-
+  ModificarUserService(idRecibido:number,Nombres:String,Apellidos:String,Correo:String){
+    this.usuarios[idRecibido].nombres = Nombres; 
+    this.usuarios[idRecibido].apellidos = Apellidos;
+    this.usuarios[idRecibido].email = Correo; 
+    let id = this.usuarios[idRecibido].id;
+    this.route.navigate(['/profile',id]);
+  }
+  CancelActionMod_Elim(id:number){
+    this.route.navigate(['/profile',id]);
   }
 }

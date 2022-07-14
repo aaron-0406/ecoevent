@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth-service/auth.service';
 import { Usuario } from '../PrototypeUser/Usuario';
 
@@ -16,7 +16,7 @@ export class ProfileComponent implements OnInit {
   Correo:String=''; 
   
 
-  constructor(private routeCaptureid:ActivatedRoute, private serviceAuth:AuthService){ }
+  constructor(private routeCaptureid:ActivatedRoute, private serviceAuth:AuthService,private route:Router){ }
   usuarioData: Usuario [] = this.serviceAuth.usuarios;
   
   ngOnInit(): void {
@@ -28,6 +28,13 @@ export class ProfileComponent implements OnInit {
     this.Nombres = this.usuarioData[id].nombres; 
     this.Apellidos = this.usuarioData[id].apellidos; 
     this.Correo = this.usuarioData[id].email; 
+  }
+
+  NavigateeditProfileUser(){
+    this.id = this.routeCaptureid.snapshot.params['id'];
+    let userId = this.serviceAuth.CapturarUserService(this.id);
+    let id = Number(userId) + 1;
+    this.route.navigate(['/edit-profile',id]);
   }
 
 
