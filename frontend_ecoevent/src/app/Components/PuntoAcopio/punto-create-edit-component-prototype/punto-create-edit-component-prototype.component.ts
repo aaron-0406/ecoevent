@@ -22,6 +22,20 @@ export class PuntoCreateEditComponentPrototypeComponent implements OnInit {
   puntos: PuntoAcopio[] = [];
 
   ngOnInit(): void {
+
+    this._puntoService.getPuntos().subscribe((data) => {
+      data.forEach((puntoData) => {
+        if (puntoData.id_punto == this.index) {
+          this.puntosMostrar = puntoData;
+        }
+      });
+    }
+    );
+
+    this.esEditar;
+    if (this.index) {
+      this.acto = 'Editar';
+    }
   }
 
   //para identificar 'editarPuntos'
@@ -38,6 +52,13 @@ export class PuntoCreateEditComponentPrototypeComponent implements OnInit {
     horario: '',
     distrito: '',
   };
+
+  crearPunto() {
+    if (this.puntosMostrar.direccion) {
+      this._puntoService.crearPunto(this.puntosMostrar).subscribe();
+      this._router.navigate(['/puntoAcopio']);
+    }
+  }
 
   editarPunto() {
     this._puntoService.editarPunto(this.puntosMostrar).subscribe();

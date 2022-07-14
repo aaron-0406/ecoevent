@@ -15,6 +15,10 @@ export class PuntoService {
     return this.http.get<PuntoAcopio[]>(`${this.apiUrl}`);
   }
 
+  crearPunto(dto: PuntoAcopio) {
+    return this.http.post<PuntoAcopio>(`${this.apiUrl}`, dto);
+  }
+
   editarPunto(dto: PuntoAcopio) {
     return this.http.put<PuntoAcopio>(`${this.apiUrl}`, dto);
   }
