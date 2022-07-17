@@ -41,6 +41,10 @@ import { PuntoListComponentPrototypeComponent } from './Components/PuntoAcopio/p
 
 //Modal material 
 import {MatDialogModule} from '@angular/material/dialog';
+import { ListaEventoComponent } from './Usuario/Evento-User/lista-evento/lista-evento.component';
+import { ListaHorarioComponent } from './Usuario/Horario-User/lista-horario/lista-horario.component';
+import { ListaNewsComponent } from './Usuario/News-User/lista-news/lista-news.component';
+import { ListaPuntoAcopioComponent } from './Usuario/PuntoAcopio-User/lista-punto-acopio/lista-punto-acopio.component';
 const routes: Routes = [
   // Eventos
   { path: 'eventos', component: EventoComponent },
@@ -84,6 +88,10 @@ const routes: Routes = [
     EditProfileComponentComponent,
     PuntoCreateEditComponentPrototypeComponent,
     PuntoListComponentPrototypeComponent,
+    ListaEventoComponent,
+    ListaHorarioComponent,
+    ListaNewsComponent,
+    ListaPuntoAcopioComponent,
   ],
   imports: [
     BrowserModule,
