@@ -23,7 +23,7 @@ export class ListaNewsComponent implements OnInit {
   };  
 
   ngOnInit(): void {
-    this.newsList = this._newsService.getNews
+    //this.newsList = this._newsService.getNews
   }
 
 
