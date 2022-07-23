@@ -77,7 +77,7 @@ const routes: Routes = [
   {path: "ListNewsUser", component:ListaNewsComponent},
   {path: "ListHorarioUser", component:ListaHorarioComponent},
   {path: "ListEventoUser", component:ListaEventoComponent},
-  {path: "ListPundosAcopioUser", component:ListaPuntoAcopioComponent},
+  {path: "ListPuntosAcopioUser", component:ListaPuntoAcopioComponent},
 ];
 
 @NgModule({

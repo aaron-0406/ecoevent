@@ -1,1 +1,27 @@
-<p>lista-punto-acopio works!</p>
+<div class="container-table">
+    <figure class="text-center">
+        <blockquote class="blockquote">
+            <h1><strong>Puntos de Acopio</strong></h1>
+            <p>¡Conoce los puntos de acopio de tu localidad!</p>
+            <p></p>
+        </blockquote>
+    </figure>
+
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <ng-container matColumnDef="Direccion">
+          <th mat-header-cell *matHeaderCellDef>Direccion</th>
+          <td mat-cell *matCellDef="let element" [(ngModel)]="direccion">{{direccion}}</td>
+        </ng-container>
+      
+        <ng-container matColumnDef="Horario">
+          <th mat-header-cell *matHeaderCellDef>Horario</th>
+          <td mat-cell *matCellDef="let element"></td>
+        </ng-container>
+
+        <ng-container matColumnDef="Distrito">
+          <th mat-header-cell *matHeaderCellDef>Distrito</th>
+          <td mat-cell *matCellDef="let element"></td>
+        </ng-container>
+
+      </table>
+</div>
