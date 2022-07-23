@@ -11,10 +11,10 @@ export class AuthService {
 
   usuarios: Usuario[] = [
     new Usuario("Administrador","1","Luis","Silva","Balladares@hotmail.com","666"),
-    new Usuario("esclavo","2","Angie","Cabanillas","Cabanillas@hotmail.com","666"),
-    new Usuario("esclavo","3","Lurdes","Cornejo","Cornejo@hotmail.com","666"),
-    new Usuario("esclavo","4","Aaron","Paredes","Pares@hotmail.com","666"),
-    new Usuario("esclavo","5","Kiara","Requenes","Requenes@hotmail.com","666"),
+    new Usuario("User","2","Angie","Cabanillas","Cabanillas@hotmail.com","666"),
+    new Usuario("User","3","Lurdes","Cornejo","Cornejo@hotmail.com","666"),
+    new Usuario("User","4","Aaron","Paredes","Pares@hotmail.com","666"),
+    new Usuario("User","5","Kiara","Requenes","Requenes@hotmail.com","666"),
   ];
 
   RegistrarUserService(user:Usuario){
@@ -35,17 +35,20 @@ export class AuthService {
   }
 
   LoginUserService(email:String,contra:String){
-    for (let index = 0; index < this.usuarios.length; index++) {
+    for (let index = 0; index <= 5; index++) {
+      
+      
       if (this.usuarios[index].email == email && this.usuarios[index].contra == contra) {
         console.log("Usuario encontrado: " + this.usuarios[index]);
         let id = this.usuarios[index].id;
         this.route.navigate(['/profile',id]);
-        return id;
+        localStorage.setItem("User",JSON.stringify(this.usuarios[index]))
+        //return id;
 
       }
       else{
-        let respuestaNegativa =console.log("Usuario no encontrado");
-        return respuestaNegativa;
+        console.log("Usuario no encontrado");
+        //return respuestaNegativa;
       }
     }
   }
