@@ -1,0 +1,7 @@
+.newsList{
+    width: 100%;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
