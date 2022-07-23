@@ -14,6 +14,7 @@ export class RegisterComponent implements OnInit {
   constructor(private AuthService:AuthService) { }
 
   objetoUsuario: Usuario = {
+    type:'',
     id:'',
     nombres:'',
     apellidos:'',

@@ -10,11 +10,11 @@ export class AuthService {
   constructor(private route:Router,private dialogRef:MatDialog) { }
 
   usuarios: Usuario[] = [
-    new Usuario("1","Luis","Silva","Balladares@hotmail.com","666"),
-    new Usuario("2","Angie","Cabanillas","Cabanillas@hotmail.com","666"),
-    new Usuario("3","Lurdes","Cornejo","Cornejo@hotmail.com","666"),
-    new Usuario("4","Aaron","Paredes","Pares@hotmail.com","666"),
-    new Usuario("5","Kiara","Requenes","Requenes@hotmail.com","666"),
+    new Usuario("Administrador","1","Luis","Silva","Balladares@hotmail.com","666"),
+    new Usuario("esclavo","2","Angie","Cabanillas","Cabanillas@hotmail.com","666"),
+    new Usuario("esclavo","3","Lurdes","Cornejo","Cornejo@hotmail.com","666"),
+    new Usuario("esclavo","4","Aaron","Paredes","Pares@hotmail.com","666"),
+    new Usuario("esclavo","5","Kiara","Requenes","Requenes@hotmail.com","666"),
   ];
 
   RegistrarUserService(user:Usuario){

@@ -45,7 +45,10 @@ import { ListaEventoComponent } from './Usuario/Evento-User/lista-evento/lista-e
 import { ListaHorarioComponent } from './Usuario/Horario-User/lista-horario/lista-horario.component';
 import { ListaNewsComponent } from './Usuario/News-User/lista-news/lista-news.component';
 import { ListaPuntoAcopioComponent } from './Usuario/PuntoAcopio-User/lista-punto-acopio/lista-punto-acopio.component';
+
 const routes: Routes = [
+
+//TODO ADMIN  
   // Eventos
   { path: 'eventos', component: EventoComponent },
   { path: 'eventos/create', component: CrearEventoComponent },
@@ -68,6 +71,13 @@ const routes: Routes = [
   { path: 'puntoAcopio', component: PuntoListComponentPrototypeComponent },
   { path: 'nuevoPunto', component: PuntoCreateEditComponentPrototypeComponent },
   { path: 'editarPunto/:id', component: PuntoCreateEditComponentPrototypeComponent },
+
+  //TODO USER
+
+  {path: "ListNewsUser", component:ListaNewsComponent},
+  {path: "ListHorarioUser", component:ListaHorarioComponent},
+  {path: "ListEventoUser", component:ListaEventoComponent},
+  {path: "ListPundosAcopioUser", component:ListaPuntoAcopioComponent},
 ];
 
 @NgModule({
@@ -88,6 +98,9 @@ const routes: Routes = [
     EditProfileComponentComponent,
     PuntoCreateEditComponentPrototypeComponent,
     PuntoListComponentPrototypeComponent,
+
+    //TODO USER 
+
     ListaEventoComponent,
     ListaHorarioComponent,
     ListaNewsComponent,
