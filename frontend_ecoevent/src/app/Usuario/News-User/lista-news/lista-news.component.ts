@@ -12,18 +12,18 @@ export class ListaNewsComponent implements OnInit {
 
   constructor(private _newsService: NewsService) { }
 
-  title:String = 'dsad'; 
-  description:String ='';
-  autor:String=''; 
+  //title:String = 'dsad'; 
+  //description:String ='';
+  //autor:String=''; 
 
-  newsList:News = {
-    title:'', 
-    description:'',
-    autor:'', 
-  };  
+  newsList:News[]=[];  
 
   ngOnInit(): void {
     //this.newsList = this._newsService.getNews
+    this._newsService.getNews().subscribe( news => {
+      console.log(news);
+      this.newsList = Object.values(news)
+    })
   }
 
 
@@ -31,8 +31,4 @@ export class ListaNewsComponent implements OnInit {
   from Japan. A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was
   originally bred for hunting.`;
 
-  cargarNoticias() {
-    this._newsService.getNews().subscribe((data) =>
-    this.newsList.title = data[1].title);
-  }
 }
