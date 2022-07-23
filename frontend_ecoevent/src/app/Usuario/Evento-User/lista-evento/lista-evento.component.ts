@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table';
+import { Evento } from 'src/app/Components/evento/evento';
+import { EventoService } from 'src/app/services/evento.service';
 
 @Component({
   selector: 'app-lista-evento',
@@ -7,9 +10,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListaEventoComponent implements OnInit {
 
-  constructor() { }
+  dataSource!: MatTableDataSource<any>;
+
+  constructor(private _eventoService: EventoService) { }
+
+  titulo:String = '';
+  descripcion:String = '';
+  lugar:String = '';
+  hora:String = '';
+  fecha:String = '';
+  foto:String = '';
+
+  eventosList: Evento = {
+    id: '',
+    titulo:'',
+    descripcion:'',
+    lugar:'', 
+    hora:'',
+    fecha:'',
+    foto:'',
+  };  
 
   ngOnInit(): void {
+  }
+
+  cargarEventos() {
+   // this._eventoService.getEventos().subscribe((data) => 
+  //  this.eventosList.titulo = data[1].titulo);
   }
 
 }
