@@ -14,6 +14,7 @@ export class ListaEventoComponent implements OnInit {
 
   constructor(private _eventoService: EventoService) { }
 
+  id_event:String='';
   titulo:String = '';
   descripcion:String = '';
   lugar:String = '';
@@ -22,21 +23,21 @@ export class ListaEventoComponent implements OnInit {
   foto:String = '';
 
   eventosList: Evento = {
-    id: '',
-    titulo:'',
-    descripcion:'',
-    lugar:'', 
-    hora:'',
-    fecha:'',
-    foto:'',
+    id_event: 0,
+    title:'',
+    description:'',
+    place:'', 
+    hour:'',
+    date:'',
+    urlEventImage:'',
   };  
 
   ngOnInit(): void {
   }
 
   cargarEventos() {
-   // this._eventoService.getEventos().subscribe((data) => 
-  //  this.eventosList.titulo = data[1].titulo);
+    this._eventoService.getEventos().subscribe((data) => 
+    this.eventosList.title = data[1].title);
   }
 
 }
