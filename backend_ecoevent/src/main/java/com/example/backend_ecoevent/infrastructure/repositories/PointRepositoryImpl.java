@@ -2,9 +2,12 @@ package com.example.backend_ecoevent.infrastructure.repositories;
 
 import java.util.List;
 
+import org.springframework.stereotype.Component;
+
 import com.example.backend_ecoevent.domain.entities.Point;
 import com.example.backend_ecoevent.domain.repositories.PointRepository;
 
+@Component
 public class PointRepositoryImpl implements PointRepository {
 
     private final PointJpaRepository db;
