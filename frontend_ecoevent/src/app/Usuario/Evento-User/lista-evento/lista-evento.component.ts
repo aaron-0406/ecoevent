@@ -26,17 +26,17 @@ export class ListaEventoComponent implements OnInit {
     id_event: 0,
     title:'',
     description:'',
-    place:'', 
+    place:'',
     hour:'',
     date:'',
     urlEventImage:'',
-  };  
+  };
 
   ngOnInit(): void {
   }
 
   cargarEventos() {
-    this._eventoService.getEventos().subscribe((data) => 
+    this._eventoService.getEventos().subscribe((data) =>
     this.eventosList.title = data[1].title);
   }
 
