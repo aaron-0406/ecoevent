@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { EventoService } from 'src/app/services/evento.service';
+import { Evento } from './evento';
 export interface Eventos {
   id: string;
   titulo: string;
@@ -17,7 +18,7 @@ export interface Eventos {
   styleUrls: ['./evento.component.css'],
 })
 export class EventoComponent implements OnInit {
-  listEventos: Eventos[] = [];
+  listEventos: Evento[] = [];
 
   displayedColumns: string[] = [
     'id',
@@ -36,19 +37,17 @@ export class EventoComponent implements OnInit {
   ngOnInit(): void {
     this.cargarEventos();
   }
-  crearEvento(eventos: Eventos) {
-    this.listEventos.push(eventos);
-  }
-
 
   cargarEventos() {
-    this.listEventos = this._eventoService.getEventos();
-    this.dataSource = new MatTableDataSource(this.listEventos);
+    this._eventoService.getEventos().subscribe((data) => {
+      this.dataSource = new MatTableDataSource(data);
+      this.listEventos = data;
+    });
   }
 
   eliminarEvento(index: number) {
-    console.log(index);
-    this._eventoService.eliminarEvento(index);
-    this.cargarEventos();
+    this._eventoService.eliminarEvento(index).subscribe(() => {
+      this.cargarEventos();
+    });
   }
 }

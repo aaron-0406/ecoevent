@@ -1,9 +1,9 @@
-export class Evento{
-    id: string ="";
-    titulo: string ="";
-    descripcion: string ="";
-    lugar: string ="";
-    hora: string ="";
-    fecha: string ="";
-    foto: string ="";
+export class Evento {
+  id_event: number = 0;
+  title: string = '';
+  description: string = '';
+  place: string = '';
+  hour: string = '';
+  date: string = '';
+  urlEventImage: string = '';
 }

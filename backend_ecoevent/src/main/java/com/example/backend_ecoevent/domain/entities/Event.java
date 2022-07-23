@@ -27,11 +27,11 @@ public class Event {
 
     @NotNull
     @Column(name = "hour", nullable = false, length = 10)
-    private Date hour;
+    private String hour;
 
     @NotNull
     @Column(name = "date", nullable = false, length = 10)
-    private Date date;
+    private String date;
 
     @Column(name = "urlEventImage", nullable = false, length = 150)
     private String urlEventImage;
@@ -39,7 +39,7 @@ public class Event {
     public Event() {
     }
 
-    public Event(Integer id_event, String title, String description, String place, Date hour, Date date,
+    public Event(Integer id_event, String title, String description, String place, String hour, String date,
             String urlEventImage) {
         this.id_event = id_event;
         this.title = title;
@@ -82,19 +82,19 @@ public class Event {
         this.place = place;
     }
 
-    public Date getHour() {
+    public String getHour() {
         return this.hour;
     }
 
-    public void setHour(Date hour) {
+    public void setHour(String hour) {
         this.hour = hour;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return this.date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 

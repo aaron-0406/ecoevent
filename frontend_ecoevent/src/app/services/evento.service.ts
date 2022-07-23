@@ -1,126 +1,30 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment';
+import { Evento } from '../Components/evento/evento';
 import { Eventos } from '../Components/evento/evento.component';
 
 @Injectable({
   providedIn: 'root',
 })
 export class EventoService {
-  listEventos: Eventos[] = [
-    {
-      id: '1',
-      titulo: 'Recojo de basura en las playas',
-      descripcion: '',
-      lugar: 'Piura',
-      hora: '21',
-      fecha: '01/02/2001',
-      foto: 'url',
-    },
-    {
-      id: '2',
-      titulo: 'Campaña de reciclaje',
-      descripcion: '',
-      lugar: 'Laredo',
-      hora: '',
-      fecha: '01/02/2001',
-      foto: 'url',
-    },
-    {
-      id: '3',
-      titulo: 'Recojo de basura en las playas',
-      descripcion: '',
-      lugar: 'El porvenir',
-      hora: '21',
-      fecha: '01/02/2001',
-      foto: 'url',
-    },
-    {
-      id: '4',
-      titulo: 'Campaña de reciclaje',
-      descripcion: '',
-      lugar: 'Trujillo',
-      hora: '21',
-      fecha: '01/02/2001',
-      foto: 'url',
-    },
-    {
-      id: '5',
-      titulo: 'Recojo de basura en las playas',
-      descripcion: '',
-      lugar: 'La esperanza',
-      hora: '21',
-      fecha: '01/02/2001',
-      foto: 'url',
-    },
-    {
-      id: '6',
-      titulo: 'Campaña de reciclaje',
-      descripcion: '',
-      lugar: 'Trujillo',
-      hora: '21',
-      fecha: '01/02/2001',
-      foto: 'url',
-    },
-    {
-      id: '7',
-      titulo: 'Recojo de basura en las playas',
-      descripcion: '',
-      lugar: 'N',
-      hora: '21',
-      fecha: '01/02/2001',
-      foto: 'url',
-    },
-    {
-      id: '8',
-      titulo: 'Campaña de reciclaje',
-      descripcion: '',
-      lugar: 'Huanchaco',
-      hora: '21',
-      fecha: '01/02/2001',
-      foto: 'url',
-    },
-    {
-      id: '9',
-      titulo: 'Recojo de basura en las playas',
-      descripcion: '',
-      lugar: 'Florencia de Mora',
-      hora: '21',
-      fecha: '01/02/2001',
-      foto: 'url',
-    },
-    {
-      id: '10',
-      titulo: 'Campaña de reciclaje',
-      descripcion: '',
-      lugar: 'Trujillo',
-      hora: '21',
-      fecha: '01/02/2001',
-      foto: 'url',
-    },
-  ];
+  private apiUrl = `${environment.API}/event`;
 
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
   getEventos() {
-    return this.listEventos.slice();
+    return this.http.get<Evento[]>(`${this.apiUrl}`);
   }
 
-  crearEvento(eventNew: Eventos) {
-    this.listEventos.push(eventNew);
+  crearEvento(dto: Evento) {
+    return this.http.post<Evento>(`${this.apiUrl}`, dto);
   }
 
-  editarEvento(eventoEditar: Eventos) {
-    const listaEventosModificados = this.listEventos.map((evento: Eventos) => {
-      if (evento.id === eventoEditar.id) {
-        return eventoEditar;
-      }
-
-      return evento;
-    });
-
-    this.listEventos = listaEventosModificados;
+  editarEvento(dto: Evento) {
+    return this.http.put<Evento>(`${this.apiUrl}`, dto);
   }
 
-  eliminarEvento(index: number) {
-    this.listEventos.splice(index, 1);
+  eliminarEvento(id: number) {
+    return this.http.delete<string>(`${this.apiUrl}/${id}`);
   }
 }
